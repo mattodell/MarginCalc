@@ -1,0 +1,21 @@
+.td-nowrap {
+    white-space: nowrap;
+}
+
+.td-center {
+    text-align: center;
+}
+
+.td-metaheader {
+    font-weight: bold;
+    text-align: center;
+
+}
+
+.th-doubleheader {
+    height: 50px;
+}
+
+.input-number {
+    width: 50px;
+}
