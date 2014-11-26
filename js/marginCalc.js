@@ -1,5 +1,44 @@
 function addAnotherOption() {
-    $("#option2").show(1000);
+    var option = $("#optionCount").val();
+
+    if (option === "1") {
+        $("#option2").show(1000);
+        $("#optionCount").val("2");
+        $("#removeButton").show(1000);
+    }
+    else if (option === "2") {
+        $("#option3").show(1000);
+        $("#optionCount").val("3");
+    }
+    else if (option === "3") {
+        $("#option4").show(1000);
+        $("#optionCount").val("4");
+        $("#addAnotherButton").hide(1000);
+    }
+}
+
+function removeOption() {
+    var option = $("#optionCount").val();
+
+    if (option === "2") {
+        $("#option2").hide(1000);
+        $("#optionCount").val("1");
+        $("#removeButton").hide(1000);
+    }
+    else if (option === "3") {
+        $("#option3").hide(1000);
+        $("#optionCount").val("2");
+    }
+    else if (option === "4") {
+        $("#option4").hide(1000);
+        $("#optionCount").val("3");
+        $("#addAnotherButton").show(1000);
+
+    }
+}
+
+function saveOptionName() {
+    $("#option1Label").text($("#option1Name").val());
 }
 
 function getInt(value) {

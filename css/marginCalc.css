@@ -1,9 +1,54 @@
+body {
+    padding-top: 90px;
+}
+
 .page-title {
+    padding-left: 100px;
+    margin-left: 100px;
     text-align: center;
+    color: white;
+    font-family: fantasy;
+    display: block;
+}
+
+.modal-title {
+    text-align: center;
+    color: white;
+    font-family: fantasy;
+    display: block;
+}
+
+.modal-header {
+    color: #fff;
+    background-attachment: scroll;
+    background-image: url(/images/schlage_bg.jpg);
+    background-position: center center;
+    background-repeat: none;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+.title-logo {
+    height: 45px;
+}
+
+.navbar-inverse {
+    color: #fff;
+    background-attachment: scroll;
+    background-image: url(/images/schlage_bg.jpg);
+    background-position: center center;
+    background-repeat: none;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
 }
 
 .td-nowrap {
     white-space: nowrap;
+    font-size: 11px;
 }
 
 .td-center {
@@ -13,13 +58,26 @@
 .td-metaheader {
     font-weight: bold;
     text-align: center;
-
 }
 
 .th-doubleheader {
-    height: 50px;
+    height: 45px;
+    font-size: 11px;
 }
 
 .input-number {
     width: 50px;
+}
+
+.schlage-button {
+    background-color: #00a9e0;
+}
+
+.footerHr {
+    background: #00a9e0;
+    height: 1px;
+}
+
+.footerText {
+    text-align: center
 }
