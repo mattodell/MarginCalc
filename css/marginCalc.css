@@ -58,6 +58,7 @@ body {
 .td-metaheader {
     font-weight: bold;
     text-align: center;
+    height: 45px;
 }
 
 .th-doubleheader {
