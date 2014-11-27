@@ -73,6 +73,43 @@ body {
     background-color: #00a9e0;
 }
 
+.btn-schlage-darken.active {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.btn-schlage-darken {
+  color: #ffffff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: #009acc;
+  background-image: -moz-linear-gradient(top, #00a9e0, #0083ad);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#00a9e0), to(#0083ad));
+  background-image: -webkit-linear-gradient(top, #00a9e0, #0083ad);
+  background-image: -o-linear-gradient(top, #00a9e0, #0083ad);
+  background-image: linear-gradient(to bottom, #00a9e0, #0083ad);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff00a9e0', endColorstr='#ff0083ad', GradientType=0);
+  border-color: #0083ad #0083ad #004961;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  *background-color: #0083ad;
+  /* Darken IE7 buttons by default so they stand out more given they won't have borders */
+
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+}
+.btn-schlage-darken:hover,
+.btn-schlage-darken:focus,
+.btn-schlage-darken:active,
+.btn-schlage-darken.active,
+.btn-schlage-darken.disabled,
+.btn-schlage-darken[disabled] {
+  color: #ffffff;
+  background-color: #0083ad;
+  *background-color: #006f94;
+}
+.btn-schlage-darken:active,
+.btn-schlage-darken.active {
+  background-color: #005c7a ;
+}
+
 .footerHr {
     background: #00a9e0;
     height: 1px;
