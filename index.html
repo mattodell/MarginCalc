@@ -700,6 +700,33 @@
 
     <!-- End Modals -->
 
+    <!-- Table for Printing and exporting -->
+    <table id="printTable" class="table">
+        <tr class="td-metaheader" >
+            <td colspan="3"><label>Common Inputs</label></td>
+            <td colspan="4"><label id="p_option1Label">Option 1</label></td>
+        </tr>
+        <tr>
+            <th class="td-nowrap th-doubleheader">Function</th>
+            <th class="td-center th-doubleheader">Qty</th>
+            <th class="td-center th-doubleheader">Sales Margin</th>
+            <th class="td-center th-doubleheader">List</th>
+            <th class="td-center th-doubleheader">Discount</th>
+            <th class="td-center th-doubleheader">Net</th>
+            <th class="td-center th-doubleheader">Retail</th>
+        </tr>
+        <tr>
+            <td class="td-nowrap">Passage</td>
+            <td class="td-center"><label id="p_qty_l1">12</label></td>
+            <td class="td-center"><label id="p_mgn_l1">35%</label></td>
+            <td class="td-center"><label id="p_list_l1_o1">$28.00</label></td>
+            <td class="td-center"><label id="p_discount_l1_o1">50%</label></td>
+            <td class="td-center"><label id="p_net_l1_o1">$156.00</label></td>
+            <td class="td-center"><label id="p_retail_l1_o1">$212.00</label></td>
+        </tr>
+    </table>
+
+
 
     <!-- Footer -->
     <div id="footer">
@@ -722,7 +749,7 @@
             $("#option3").hide();
             $("#option4").hide();
             $("#removeButton").hide();
-
+            $("#printTable").hide();
         });
     </script>
 
