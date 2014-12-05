@@ -84,40 +84,40 @@ function calculateAll(fieldID) {
     }
 
     //Calculate Net for Option 1
-    var net_l1_o1 = (getFloat($("#list_l1_o1").val())) * (1 - (getFloat($("#discount_l1_o1").val()) / 100)),
-        net_l2_o1 = (getFloat($("#list_l2_o1").val())) * (1 - (getFloat($("#discount_l2_o1").val()) / 100)),
-        net_l3_o1 = (getFloat($("#list_l3_o1").val())) * (1 - (getFloat($("#discount_l3_o1").val()) / 100)),
-        net_l4_o1 = (getFloat($("#list_l4_o1").val())) * (1 - (getFloat($("#discount_l4_o1").val()) / 100)),
-        net_l5_o1 = (getFloat($("#list_l5_o1").val())) * (1 - (getFloat($("#discount_l5_o1").val()) / 100)),
-        net_l6_o1 = (getFloat($("#list_l6_o1").val())) * (1 - (getFloat($("#discount_l6_o1").val()) / 100)),
-        net_l7_o1 = (getFloat($("#list_l7_o1").val())) * (1 - (getFloat($("#discount_l7_o1").val()) / 100));
+    var net_l1_o1 = ((getFloat($("#list_l1_o1").val())) * .50) * (1 - (getFloat($("#discount_l1_o1").val()) / 100)),
+        net_l2_o1 = ((getFloat($("#list_l2_o1").val())) * .50) * (1 - (getFloat($("#discount_l2_o1").val()) / 100)),
+        net_l3_o1 = ((getFloat($("#list_l3_o1").val())) * .50) * (1 - (getFloat($("#discount_l3_o1").val()) / 100)),
+        net_l4_o1 = ((getFloat($("#list_l4_o1").val())) * .50) * (1 - (getFloat($("#discount_l4_o1").val()) / 100)),
+        net_l5_o1 = ((getFloat($("#list_l5_o1").val())) * .50) * (1 - (getFloat($("#discount_l5_o1").val()) / 100)),
+        net_l6_o1 = ((getFloat($("#list_l6_o1").val())) * .50) * (1 - (getFloat($("#discount_l6_o1").val()) / 100)),
+        net_l7_o1 = ((getFloat($("#list_l7_o1").val())) * .50) * (1 - (getFloat($("#discount_l7_o1").val()) / 100));
 
     //Calculate Net for Option 2
-    var net_l1_o2 = (getFloat($("#list_l1_o2").val())) * (1 - (getFloat($("#discount_l1_o2").val()) / 100)),
-        net_l2_o2 = (getFloat($("#list_l2_o2").val())) * (1 - (getFloat($("#discount_l2_o2").val()) / 100)),
-        net_l3_o2 = (getFloat($("#list_l3_o2").val())) * (1 - (getFloat($("#discount_l3_o2").val()) / 100)),
-        net_l4_o2 = (getFloat($("#list_l4_o2").val())) * (1 - (getFloat($("#discount_l4_o2").val()) / 100)),
-        net_l5_o2 = (getFloat($("#list_l5_o2").val())) * (1 - (getFloat($("#discount_l5_o2").val()) / 100)),
-        net_l6_o2 = (getFloat($("#list_l6_o2").val())) * (1 - (getFloat($("#discount_l6_o2").val()) / 100)),
-        net_l7_o2 = (getFloat($("#list_l7_o2").val())) * (1 - (getFloat($("#discount_l7_o2").val()) / 100));
+    var net_l1_o2 = ((getFloat($("#list_l1_o2").val())) * .50) * (1 - (getFloat($("#discount_l1_o2").val()) / 100)),
+        net_l2_o2 = ((getFloat($("#list_l2_o2").val())) * .50) * (1 - (getFloat($("#discount_l2_o2").val()) / 100)),
+        net_l3_o2 = ((getFloat($("#list_l3_o2").val())) * .50) * (1 - (getFloat($("#discount_l3_o2").val()) / 100)),
+        net_l4_o2 = ((getFloat($("#list_l4_o2").val())) * .50) * (1 - (getFloat($("#discount_l4_o2").val()) / 100)),
+        net_l5_o2 = ((getFloat($("#list_l5_o2").val())) * .50) * (1 - (getFloat($("#discount_l5_o2").val()) / 100)),
+        net_l6_o2 = ((getFloat($("#list_l6_o2").val())) * .50) * (1 - (getFloat($("#discount_l6_o2").val()) / 100)),
+        net_l7_o2 = ((getFloat($("#list_l7_o2").val())) * .50) * (1 - (getFloat($("#discount_l7_o2").val()) / 100));
 
     //Calculate Net for Option 3
-    var net_l1_o3 = (getFloat($("#list_l1_o3").val())) * (1 - (getFloat($("#discount_l1_o3").val()) / 100)),
-        net_l2_o3 = (getFloat($("#list_l2_o3").val())) * (1 - (getFloat($("#discount_l2_o3").val()) / 100)),
-        net_l3_o3 = (getFloat($("#list_l3_o3").val())) * (1 - (getFloat($("#discount_l3_o3").val()) / 100)),
-        net_l4_o3 = (getFloat($("#list_l4_o3").val())) * (1 - (getFloat($("#discount_l4_o3").val()) / 100)),
-        net_l5_o3 = (getFloat($("#list_l5_o3").val())) * (1 - (getFloat($("#discount_l5_o3").val()) / 100)),
-        net_l6_o3 = (getFloat($("#list_l6_o3").val())) * (1 - (getFloat($("#discount_l6_o3").val()) / 100)),
-        net_l7_o3 = (getFloat($("#list_l7_o3").val())) * (1 - (getFloat($("#discount_l7_o3").val()) / 100));
+    var net_l1_o3 = ((getFloat($("#list_l1_o3").val())) * .50) * (1 - (getFloat($("#discount_l1_o3").val()) / 100)),
+        net_l2_o3 = ((getFloat($("#list_l2_o3").val())) * .50) * (1 - (getFloat($("#discount_l2_o3").val()) / 100)),
+        net_l3_o3 = ((getFloat($("#list_l3_o3").val())) * .50) * (1 - (getFloat($("#discount_l3_o3").val()) / 100)),
+        net_l4_o3 = ((getFloat($("#list_l4_o3").val())) * .50) * (1 - (getFloat($("#discount_l4_o3").val()) / 100)),
+        net_l5_o3 = ((getFloat($("#list_l5_o3").val())) * .50) * (1 - (getFloat($("#discount_l5_o3").val()) / 100)),
+        net_l6_o3 = ((getFloat($("#list_l6_o3").val())) * .50) * (1 - (getFloat($("#discount_l6_o3").val()) / 100)),
+        net_l7_o3 = ((getFloat($("#list_l7_o3").val())) * .50) * (1 - (getFloat($("#discount_l7_o3").val()) / 100));
 
     //Calculate Net for Option 4
-    var net_l1_o4 = (getFloat($("#list_l1_o4").val())) * (1 - (getFloat($("#discount_l1_o4").val()) / 100)),
-        net_l2_o4 = (getFloat($("#list_l2_o4").val())) * (1 - (getFloat($("#discount_l2_o4").val()) / 100)),
-        net_l3_o4 = (getFloat($("#list_l3_o4").val())) * (1 - (getFloat($("#discount_l3_o4").val()) / 100)),
-        net_l4_o4 = (getFloat($("#list_l4_o4").val())) * (1 - (getFloat($("#discount_l4_o4").val()) / 100)),
-        net_l5_o4 = (getFloat($("#list_l5_o4").val())) * (1 - (getFloat($("#discount_l5_o4").val()) / 100)),
-        net_l6_o4 = (getFloat($("#list_l6_o4").val())) * (1 - (getFloat($("#discount_l6_o4").val()) / 100)),
-        net_l7_o4 = (getFloat($("#list_l7_o4").val())) * (1 - (getFloat($("#discount_l7_o4").val()) / 100));
+    var net_l1_o4 = ((getFloat($("#list_l1_o4").val())) * .50) * (1 - (getFloat($("#discount_l1_o4").val()) / 100)),
+        net_l2_o4 = ((getFloat($("#list_l2_o4").val())) * .50) * (1 - (getFloat($("#discount_l2_o4").val()) / 100)),
+        net_l3_o4 = ((getFloat($("#list_l3_o4").val())) * .50) * (1 - (getFloat($("#discount_l3_o4").val()) / 100)),
+        net_l4_o4 = ((getFloat($("#list_l4_o4").val())) * .50) * (1 - (getFloat($("#discount_l4_o4").val()) / 100)),
+        net_l5_o4 = ((getFloat($("#list_l5_o4").val())) * .50) * (1 - (getFloat($("#discount_l5_o4").val()) / 100)),
+        net_l6_o4 = ((getFloat($("#list_l6_o4").val())) * .50) * (1 - (getFloat($("#discount_l6_o4").val()) / 100)),
+        net_l7_o4 = ((getFloat($("#list_l7_o4").val())) * .50) * (1 - (getFloat($("#discount_l7_o4").val()) / 100));
 
     //Calculate Retail for Option 1
     var retail_l1_o1 = net_l1_o1 * (1 + (getFloat($("#mgn_l1").val()) / 100)),
@@ -348,8 +348,6 @@ function fillAllSalesMargin() {
     $("#mgn_l3").val(margin);
     $("#mgn_l4").val(margin);
     $("#mgn_l5").val(margin);
-    $("#mgn_l6").val(margin);
-    $("#mgn_l7").val(margin);
 }
 
 // Fill all discounts from the first value
