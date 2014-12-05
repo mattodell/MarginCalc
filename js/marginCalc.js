@@ -38,7 +38,21 @@ function removeOption() {
 }
 
 function saveOptionName() {
-    $("#option1Label").text($("#option1Name").val());
+    var selectedOption = $("#selectedOption").val();
+
+    if (selectedOption === 'option1') {
+         $("#option1Label").text($("#modalOptionName").val());
+    }
+    else if (selectedOption === 'option2') {
+         $("#option2Label").text($("#modalOptionName").val());
+    }
+    else if (selectedOption === 'option3') {
+         $("#option3Label").text($("#modalOptionName").val());
+    }
+    else if (selectedOption === 'option4') {
+         $("#option4Label").text($("#modalOptionName").val());
+    }
+
 }
 
 function getInt(value) {

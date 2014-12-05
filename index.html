@@ -121,7 +121,8 @@
             <table class="table table-striped">
                 <tr>
                     <td class="td-metaheader" colspan="4">
-                        <a id="option1Label" href="#option1Modal" data-toggle="modal" data-target="#option1Modal">Option 1</a>
+                        <a id="option1Label" href="#optionModal" data-toggle="modal" data-target="#optionModal">Option 1</a>
+                        <input type="hidden" id="selectedOption" />
                     </td>
                 </tr>
                 <tr>
@@ -251,7 +252,7 @@
             <table class="table table-striped">
                 <tr>
                     <td class="td-metaheader" colspan="4">
-                        <label id="option1">Option 2</label>
+                        <a id="option2Label" href="#optionModal" data-toggle="modal" data-target="#optionModal">Option 2</a>
                     </td>
                 </tr>
                 <tr>
@@ -381,7 +382,7 @@
             <table class="table table-striped">
                 <tr>
                     <td class="td-metaheader" colspan="4">
-                        <label id="option1">Option 3</label>
+                        <a id="option3Label" href="#optionModal" data-toggle="modal" data-target="#optionModal">Option 3</a>
                     </td>
                 </tr>
                 <tr>
@@ -511,7 +512,7 @@
             <table class="table table-striped">
                 <tr>
                     <td class="td-metaheader" colspan="4">
-                        <label id="option1">Option 4</label>
+                        <a id="option4Label" href="#optionModal" data-toggle="modal" data-target="#optionModal">Option 4</a>
                     </td>
                 </tr>
                 <tr>
@@ -647,7 +648,7 @@
         <div class="col-sm-offset-2 col-sm-6">
             <button class="btn btn-sm btn-schlage-darken" type="button" id="clearButton" href="#toDoModal" data-toggle="modal" data-target="#toDoModal">Clear Form</button>
             <button class="btn btn-sm btn-schlage-darken" type="button" id="printButton" href="#toDoModal" data-toggle="modal" data-target="#toDoModal">Print</button>
-            <button class="btn btn-sm btn-schlage-darken" type="button" id="emailButton" href="#toDoModal" data-toggle="modal" data-target="#toDoModal">Email</button>
+            <button class="btn btn-sm btn-schlage-darken" type="button" id="emailButton" href="#emailModal" data-toggle="modal" data-target="#emailModal">Email</button>
             <button class="btn btn-sm btn-schlage-darken" type="button" id="excelButton" onclick="tableToExcel('printTable', 'Option Print')">Download to Excel</button>
             <button class="btn btn-sm btn-schlage-darken" type="button" id="refButton" href="#toDoModal" data-toggle="modal" data-target="#toDoModal">Show Margin Turns Reference</button>
         </div>
@@ -655,7 +656,7 @@
 
     <!-- Modals -->
 
-    <div class="modal fade" id="option1Modal">
+    <div class="modal fade" id="optionModal">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -665,13 +666,36 @@
                     <form role="form">
                         <div class="form-group">
                             <label for="option1Name">Option Name</label>
-                            <input type="text" class="form-control" id="option1Name" placeHolder="Option Name">
+                            <input type="text" class="form-control" id="modalOptionName" placeHolder="Option Name">
                         </div>
                     </form>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-sm btn-schlage-darken" data-dismiss="modal" onclick="saveOptionName();">
                         Save
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="emailModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Email These Options</h4>
+                </div>
+                <div class="modal-body">
+                    <form role="form">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Email Address</label>
+                            <input type="email" class="form-control" id="emailAddress" placeHolder="Enter Email">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-sm btn-schlage-darken" data-dismiss="modal" onclick="sendEmail();">
+                        Send
                     </button>
                 </div>
             </div>
@@ -794,6 +818,26 @@
             $("#option4").hide();
             $("#removeButton").hide();
             $("#printTable").hide();
+
+            $( "#optionModal" ).on('show.bs.modal', function(e){
+                if (e.relatedTarget.id === 'option1Label') {
+                    $("#selectedOption").val('option1');
+                    $("#modalOptionName").val($("#option1Label").text());
+                }
+                else if (e.relatedTarget.id === 'option2Label') {
+                    $("#selectedOption").val('option2');
+                    $("#modalOptionName").val($("#option2Label").text());
+                }
+                else if (e.relatedTarget.id === 'option3Label') {
+                    $("#selectedOption").val('option3');
+                    $("#modalOptionName").val($("#option3Label").text());
+                }
+                else if (e.relatedTarget.id === 'option4Label') {
+                    $("#selectedOption").val('option4');
+                    $("#modalOptionName").val($("#option4Label").text());
+                }
+
+            });
         });
     </script>
 
