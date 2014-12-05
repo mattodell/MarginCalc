@@ -21,7 +21,9 @@
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-left td-nowrap">
-                <a class="navbar-brand title-logo" href="index.html"><img class="title-logo" src="/images/schlageLogo.png" /></a>
+                <a class="navbar-brand title-logo" href="index.html">
+                    <img class="title-logo" src="/images/schlageLogo.png" />
+                </a>
 
                 <h2 class="page-title">House of Locks <small class="page-title">Margin Calculator</small></h2>
 
@@ -39,7 +41,7 @@
     <div class="container">
         <div class="col-sm-3">
             <table class="table table-striped">
-                <tr class="td-metaheader" >
+                <tr class="td-metaheader">
                     <td colspan="4">
                         <label id="commonInputs">Common Inputs</label>
                     </td>
@@ -635,6 +637,7 @@
             </table>
         </div>
     </div>
+
     <div class="container">
         <div class="col-sm-4">
             <input class="btn btn-sm btn-schlage-darken" type="button" id="removeButton" value="<< Remove Option" onclick="removeOption();" />
@@ -643,97 +646,115 @@
         </div>
         <div class="col-sm-offset-2 col-sm-6">
             <button class="btn btn-sm btn-schlage-darken" type="button" id="clearButton" href="#toDoModal" data-toggle="modal" data-target="#toDoModal">Clear Form</button>
-           <button class="btn btn-sm btn-schlage-darken" type="button" id="printButton" href="#toDoModal" data-toggle="modal" data-target="#toDoModal">Print</button>
+            <button class="btn btn-sm btn-schlage-darken" type="button" id="printButton" href="#toDoModal" data-toggle="modal" data-target="#toDoModal">Print</button>
             <button class="btn btn-sm btn-schlage-darken" type="button" id="emailButton" href="#toDoModal" data-toggle="modal" data-target="#toDoModal">Email</button>
-            <button class="btn btn-sm btn-schlage-darken" type="button" id="excelButton" href="#toDoModal" data-toggle="modal" data-target="#toDoModal">Download to Excel</button>
+            <button class="btn btn-sm btn-schlage-darken" type="button" id="excelButton" onclick="tableToExcel('printTable', 'Option Print')">Download to Excel</button>
             <button class="btn btn-sm btn-schlage-darken" type="button" id="refButton" href="#toDoModal" data-toggle="modal" data-target="#toDoModal">Show Margin Turns Reference</button>
         </div>
     </div>
 
     <!-- Modals -->
 
-        <div class="modal fade" id="option1Modal">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title">Name Option</h4>
-                    </div>
-                    <div class="modal-body">
-                        <form role="form">
-                            <div class="form-group">
-                                <label for="option1Name">Option Name</label>
-                                <input type="text" class="form-control" id="option1Name" placeHolder="Option Name">
-                            </div>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-sm btn-schlage-darken" data-dismiss="modal" onclick="saveOptionName();">
-                            Save
-                        </button>
-                    </div>
+    <div class="modal fade" id="option1Modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Name Option</h4>
+                </div>
+                <div class="modal-body">
+                    <form role="form">
+                        <div class="form-group">
+                            <label for="option1Name">Option Name</label>
+                            <input type="text" class="form-control" id="option1Name" placeHolder="Option Name">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-sm btn-schlage-darken" data-dismiss="modal" onclick="saveOptionName();">
+                        Save
+                    </button>
                 </div>
             </div>
         </div>
+    </div>
 
-        <div class="modal fade" id="toDoModal">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title">To Do</h4>
-                    </div>
-                    <div class="modal-body">
-                        <form role="form">
-                            <div class="form-group">
-                                <label>Under Construction</label>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-sm btn-schlage-darken" data-dismiss="modal">
-                            Close
-                        </button>
-                    </div>
+    <div class="modal fade" id="toDoModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">To Do</h4>
+                </div>
+                <div class="modal-body">
+                    <form role="form">
+                        <div class="form-group">
+                            <label>Under Construction</label>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-sm btn-schlage-darken" data-dismiss="modal">
+                        Close
+                    </button>
                 </div>
             </div>
         </div>
+    </div>
 
 
     <!-- End Modals -->
 
     <!-- Table for Printing and exporting -->
     <table id="printTable" class="table">
-        <tr class="td-metaheader" >
-            <td colspan="3"><label>Common Inputs</label></td>
-            <td colspan="4"><label id="p_option1Label">Option 1</label></td>
-        </tr>
-        <tr>
-            <th class="td-nowrap th-doubleheader">Function</th>
-            <th class="td-center th-doubleheader">Qty</th>
-            <th class="td-center th-doubleheader">Sales Margin</th>
-            <th class="td-center th-doubleheader">List</th>
-            <th class="td-center th-doubleheader">Discount</th>
-            <th class="td-center th-doubleheader">Net</th>
-            <th class="td-center th-doubleheader">Retail</th>
-        </tr>
-        <tr>
-            <td class="td-nowrap">Passage</td>
-            <td class="td-center"><label id="p_qty_l1">12</label></td>
-            <td class="td-center"><label id="p_mgn_l1">35%</label></td>
-            <td class="td-center"><label id="p_list_l1_o1">$28.00</label></td>
-            <td class="td-center"><label id="p_discount_l1_o1">50%</label></td>
-            <td class="td-center"><label id="p_net_l1_o1">$156.00</label></td>
-            <td class="td-center"><label id="p_retail_l1_o1">$212.00</label></td>
-        </tr>
+        <tbody>
+            <tr class="td-metaheader">
+                <td colspan="3">
+                    <label>Common Inputs</label>
+                </td>
+                <td colspan="4">
+                    <label id="p_option1Label">Option 1</label>
+                </td>
+            </tr>
+            <tr>
+                <th class="td-nowrap th-doubleheader">Function</th>
+                <th class="td-center th-doubleheader">Qty</th>
+                <th class="td-center th-doubleheader">Sales Margin</th>
+                <th class="td-center th-doubleheader">List</th>
+                <th class="td-center th-doubleheader">Discount</th>
+                <th class="td-center th-doubleheader">Net</th>
+                <th class="td-center th-doubleheader">Retail</th>
+            </tr>
+            <tr>
+                <td class="td-nowrap">Passage</td>
+                <td class="td-center">
+                    <label id="p_qty_l1">12</label>
+                </td>
+                <td class="td-center">
+                    <label id="p_mgn_l1">35%</label>
+                </td>
+                <td class="td-center">
+                    <label id="p_list_l1_o1">$28.00</label>
+                </td>
+                <td class="td-center">
+                    <label id="p_discount_l1_o1">50%</label>
+                </td>
+                <td class="td-center">
+                    <label id="p_net_l1_o1">$156.00</label>
+                </td>
+                <td class="td-center">
+                    <label id="p_retail_l1_o1">$212.00</label>
+                </td>
+            </tr>
+        </tbody>
     </table>
 
 
 
     <!-- Footer -->
     <div id="footer">
-      <div class="container">
-        <hr class="footerHr" />
-        <p class="small footerText">&copy; 2015 Schlage Lock Company</p>
-      </div>
+        <div class="container">
+            <hr class="footerHr" />
+            <p class="small footerText">&copy; 2015 Schlage Lock Company</p>
+        </div>
     </div>
     <!-- End Footer -->
 
@@ -742,6 +763,29 @@
 
     <!-- Bootstrap -->
     <script src="js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+        var tableToExcel = (function () {
+            var uri = 'data:application/vnd.ms-excel;base64,',
+                template = '<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns="http://www.w3.org/TR/REC-html40"><head><!--[if gte mso 9]><xml><x:ExcelWorkbook><x:ExcelWorksheets><x:ExcelWorksheet><x:Name>{worksheet}</x:Name><x:WorksheetOptions><x:DisplayGridlines/></x:WorksheetOptions></x:ExcelWorksheet></x:ExcelWorksheets></x:ExcelWorkbook></xml><![endif]--><meta http-equiv="content-type" content="text/plain; charset=UTF-8"/></head><body><table>{table}</table></body></html>',
+                base64 = function (s) {
+                    return window.btoa(unescape(encodeURIComponent(s)))
+                },
+                format = function (s, c) {
+                    return s.replace(/{(\w+)}/g, function (m, p) {
+                        return c[p];
+                    })
+                }
+            return function (table, name) {
+                if (!table.nodeType) table = document.getElementById(table)
+                var ctx = {
+                    worksheet: name || 'Worksheet',
+                    table: table.innerHTML
+                }
+                window.location.href = uri + base64(format(template, ctx))
+            }
+        })()
+    </script>
 
     <script>
         $(document).ready(function () {
