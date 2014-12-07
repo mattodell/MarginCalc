@@ -360,3 +360,24 @@ function fillAllDiscount() {
     $("#discount_l6_o1").val(margin);
     $("#discount_l7_o1").val(margin);
 }
+
+function printTable() {
+    $("#printDiv").show();
+    var data = $("#printDiv").html();
+    $("#printDiv").hide();
+    Popup(data);
+}
+
+function Popup(data) {
+    var mywindow = window.open('', 'House of Locks Margin Calculations');
+    mywindow.document.write('<html><head><title>House of Locks Margin Calculations</title>');
+    /*optional stylesheet*/ //mywindow.document.write('<link rel="stylesheet" href="main.css" type="text/css" />');
+    mywindow.document.write('</head><body >');
+    mywindow.document.write(data);
+    mywindow.document.write('</body></html>');
+
+    mywindow.print();
+    mywindow.close();
+
+    return true;
+}

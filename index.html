@@ -647,7 +647,7 @@
         </div>
         <div class="col-sm-offset-2 col-sm-6">
             <button class="btn btn-sm btn-schlage-darken" type="button" id="clearButton" href="#toDoModal" data-toggle="modal" data-target="#toDoModal">Clear Form</button>
-            <button class="btn btn-sm btn-schlage-darken" type="button" id="printButton" href="#toDoModal" data-toggle="modal" data-target="#toDoModal">Print</button>
+            <button class="btn btn-sm btn-schlage-darken" type="button" id="printButton" onclick="printTable();">Print</button>
             <button class="btn btn-sm btn-schlage-darken" type="button" id="emailButton" href="#emailModal" data-toggle="modal" data-target="#emailModal">Email</button>
             <button class="btn btn-sm btn-schlage-darken" type="button" id="excelButton" onclick="tableToExcel('printTable', 'Option Print')">Download to Excel</button>
             <button class="btn btn-sm btn-schlage-darken" type="button" id="refButton" href="#toDoModal" data-toggle="modal" data-target="#toDoModal">Show Margin Turns Reference</button>
@@ -728,49 +728,50 @@
     <!-- End Modals -->
 
     <!-- Table for Printing and exporting -->
-    <table id="printTable" class="table">
-        <tbody>
-            <tr class="td-metaheader">
-                <td colspan="3">
-                    <label>Common Inputs</label>
-                </td>
-                <td colspan="4">
-                    <label id="p_option1Label">Option 1</label>
-                </td>
-            </tr>
-            <tr>
-                <th class="td-nowrap th-doubleheader">Function</th>
-                <th class="td-center th-doubleheader">Qty</th>
-                <th class="td-center th-doubleheader">Sales Margin</th>
-                <th class="td-center th-doubleheader">List</th>
-                <th class="td-center th-doubleheader">Discount</th>
-                <th class="td-center th-doubleheader">Net</th>
-                <th class="td-center th-doubleheader">Retail</th>
-            </tr>
-            <tr>
-                <td class="td-nowrap">Passage</td>
-                <td class="td-center">
-                    <label id="p_qty_l1">12</label>
-                </td>
-                <td class="td-center">
-                    <label id="p_mgn_l1">35%</label>
-                </td>
-                <td class="td-center">
-                    <label id="p_list_l1_o1">$28.00</label>
-                </td>
-                <td class="td-center">
-                    <label id="p_discount_l1_o1">50%</label>
-                </td>
-                <td class="td-center">
-                    <label id="p_net_l1_o1">$156.00</label>
-                </td>
-                <td class="td-center">
-                    <label id="p_retail_l1_o1">$212.00</label>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-
+    <div id="printDiv">
+        <table id="printTable" class="table">
+            <tbody>
+                <tr class="td-metaheader">
+                    <td colspan="3">
+                        <label>Common Inputs</label>
+                    </td>
+                    <td colspan="4">
+                        <label id="p_option1Label">Option 1</label>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="td-nowrap th-doubleheader">Function</th>
+                    <th class="td-center th-doubleheader">Qty</th>
+                    <th class="td-center th-doubleheader">Sales Margin</th>
+                    <th class="td-center th-doubleheader">List</th>
+                    <th class="td-center th-doubleheader">Discount</th>
+                    <th class="td-center th-doubleheader">Net</th>
+                    <th class="td-center th-doubleheader">Retail</th>
+                </tr>
+                <tr>
+                    <td class="td-nowrap">Passage</td>
+                    <td class="td-center">
+                        <label id="p_qty_l1">12</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_mgn_l1">35%</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_list_l1_o1">$28.00</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_discount_l1_o1">50%</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_net_l1_o1">$156.00</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_retail_l1_o1">$212.00</label>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
 
     <!-- Footer -->
@@ -817,7 +818,7 @@
             $("#option3").hide();
             $("#option4").hide();
             $("#removeButton").hide();
-            $("#printTable").hide();
+            $("#printDiv").hide();
 
             $( "#optionModal" ).on('show.bs.modal', function(e){
                 if (e.relatedTarget.id === 'option1Label') {
