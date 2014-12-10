@@ -39,7 +39,7 @@
     <!-- End Navbar -->
 
     <div class="container">
-        <div class="col-sm-3">
+        <div class="col-sm-3" id="commonInputsTable">
             <table class="table table-striped">
                 <tr class="td-metaheader">
                     <td colspan="4">
@@ -646,7 +646,7 @@
             <input type="hidden" id="optionCount" value="1" />
         </div>
         <div class="col-sm-offset-2 col-sm-6">
-            <button class="btn btn-sm btn-schlage-darken" type="button" id="clearButton" href="#toDoModal" data-toggle="modal" data-target="#toDoModal">Clear Form</button>
+            <button class="btn btn-sm btn-schlage-darken" type="button" id="clearButton" onclick="clearData();">Clear Form</button>
             <button class="btn btn-sm btn-schlage-darken" type="button" id="printButton" onclick="printTable();">Print</button>
             <button class="btn btn-sm btn-schlage-darken" type="button" id="emailButton" href="#emailModal" data-toggle="modal" data-target="#emailModal">Email</button>
             <button class="btn btn-sm btn-schlage-darken" type="button" id="excelButton" onclick="tableToExcel('printTable', 'Option Print')">Download to Excel</button>
@@ -956,6 +956,8 @@
             $("#option4").hide();
             $("#removeButton").hide();
             $("#printDiv").hide();
+
+            loadData();
 
             $("#optionModal").on('show.bs.modal', function (e) {
                 if (e.relatedTarget.id === 'option1Label') {

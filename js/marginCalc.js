@@ -73,8 +73,103 @@ function getFloat(value) {
     }
 }
 
+function loadData() {
+    /* I hearby promise to replace this with a for each block */
+
+    $("#qty_l1").val(localStorage.getItem("qty_l1"));
+    $("#qty_l2").val(localStorage.getItem("qty_l2"));
+    $("#qty_l3").val(localStorage.getItem("qty_l3"));
+    $("#qty_l4").val(localStorage.getItem("qty_l4"));
+    $("#qty_l5").val(localStorage.getItem("qty_l5"));
+    $("#qty_l6").val(localStorage.getItem("qty_l6"));
+    $("#qty_l7").val(localStorage.getItem("qty_l7"));
+
+    $("#mgn_l1").val(localStorage.getItem("mgn_l1"));
+    $("#mgn_l2").val(localStorage.getItem("mgn_l2"));
+    $("#mgn_l3").val(localStorage.getItem("mgn_l3"));
+    $("#mgn_l4").val(localStorage.getItem("mgn_l4"));
+    $("#mgn_l5").val(localStorage.getItem("mgn_l5"));
+    $("#mgn_l6").val(localStorage.getItem("mgn_l6"));
+    $("#mgn_l7").val(localStorage.getItem("mgn_l7"));
+
+    $("#list_l1_o1").val(localStorage.getItem("list_l1_o1"));
+    $("#list_l2_o1").val(localStorage.getItem("list_l2_o1"));
+    $("#list_l3_o1").val(localStorage.getItem("list_l3_o1"));
+    $("#list_l4_o1").val(localStorage.getItem("list_l4_o1"));
+    $("#list_l5_o1").val(localStorage.getItem("list_l5_o1"));
+    $("#list_l6_o1").val(localStorage.getItem("list_l6_o1"));
+    $("#list_l7_o1").val(localStorage.getItem("list_l7_o1"));
+
+    $("#discount_l1_o1").val(localStorage.getItem("discount_l1_o1"));
+    $("#discount_l2_o1").val(localStorage.getItem("discount_l2_o1"));
+    $("#discount_l3_o1").val(localStorage.getItem("discount_l3_o1"));
+    $("#discount_l4_o1").val(localStorage.getItem("discount_l4_o1"));
+    $("#discount_l5_o1").val(localStorage.getItem("discount_l5_o1"));
+    $("#discount_l6_o1").val(localStorage.getItem("discount_l6_o1"));
+    $("#discount_l7_o1").val(localStorage.getItem("discount_l7_o1"));
+
+    $("#list_l1_o2").val(localStorage.getItem("list_l1_o2"));
+    $("#list_l2_o2").val(localStorage.getItem("list_l2_o2"));
+    $("#list_l3_o2").val(localStorage.getItem("list_l3_o2"));
+    $("#list_l4_o2").val(localStorage.getItem("list_l4_o2"));
+    $("#list_l5_o2").val(localStorage.getItem("list_l5_o2"));
+    $("#list_l6_o2").val(localStorage.getItem("list_l6_o2"));
+    $("#list_l7_o2").val(localStorage.getItem("list_l7_o2"));
+
+    $("#discount_l1_o2").val(localStorage.getItem("discount_l1_o2"));
+    $("#discount_l2_o2").val(localStorage.getItem("discount_l2_o2"));
+    $("#discount_l3_o2").val(localStorage.getItem("discount_l3_o2"));
+    $("#discount_l4_o2").val(localStorage.getItem("discount_l4_o2"));
+    $("#discount_l5_o2").val(localStorage.getItem("discount_l5_o2"));
+    $("#discount_l6_o2").val(localStorage.getItem("discount_l6_o2"));
+    $("#discount_l7_o2").val(localStorage.getItem("discount_l7_o2"));
+
+    $("#list_l1_o3").val(localStorage.getItem("list_l1_o3"));
+    $("#list_l2_o3").val(localStorage.getItem("list_l2_o3"));
+    $("#list_l3_o3").val(localStorage.getItem("list_l3_o3"));
+    $("#list_l4_o3").val(localStorage.getItem("list_l4_o3"));
+    $("#list_l5_o3").val(localStorage.getItem("list_l5_o3"));
+    $("#list_l6_o3").val(localStorage.getItem("list_l6_o3"));
+    $("#list_l7_o3").val(localStorage.getItem("list_l7_o3"));
+
+    $("#discount_l1_o3").val(localStorage.getItem("discount_l1_o3"));
+    $("#discount_l2_o3").val(localStorage.getItem("discount_l2_o3"));
+    $("#discount_l3_o3").val(localStorage.getItem("discount_l3_o3"));
+    $("#discount_l4_o3").val(localStorage.getItem("discount_l4_o3"));
+    $("#discount_l5_o3").val(localStorage.getItem("discount_l5_o3"));
+    $("#discount_l6_o3").val(localStorage.getItem("discount_l6_o3"));
+    $("#discount_l7_o3").val(localStorage.getItem("discount_l7_o3"));
+
+    $("#list_l1_o4").val(localStorage.getItem("list_l1_o4"));
+    $("#list_l2_o4").val(localStorage.getItem("list_l2_o4"));
+    $("#list_l3_o4").val(localStorage.getItem("list_l3_o4"));
+    $("#list_l4_o4").val(localStorage.getItem("list_l4_o4"));
+    $("#list_l5_o4").val(localStorage.getItem("list_l5_o4"));
+    $("#list_l6_o4").val(localStorage.getItem("list_l6_o4"));
+    $("#list_l7_o4").val(localStorage.getItem("list_l7_o4"));
+
+    $("#discount_l1_o4").val(localStorage.getItem("discount_l1_o4"));
+    $("#discount_l2_o4").val(localStorage.getItem("discount_l2_o4"));
+    $("#discount_l3_o4").val(localStorage.getItem("discount_l3_o4"));
+    $("#discount_l4_o4").val(localStorage.getItem("discount_l4_o4"));
+    $("#discount_l5_o4").val(localStorage.getItem("discount_l5_o4"));
+    $("#discount_l6_o4").val(localStorage.getItem("discount_l6_o4"));
+    $("#discount_l7_o4").val(localStorage.getItem("discount_l7_o4"));
+}
+
+function clearData() {
+    $("input:text").val("");
+    localStorage.clear();
+}
+
+function saveData(fieldID) {
+    localStorage.setItem(fieldID, $("#" + fieldID).val());
+}
+
 //Calculate all values
 function calculateAll(fieldID) {
+    saveData(fieldID);
+
     if (fieldID === "mgn_l1") {
         fillAllSalesMargin();
     }
