@@ -55,6 +55,18 @@ function saveOptionName() {
 
 }
 
+function toggleMarginMarkup() {
+    var marginLabel =  $("#marginLabel").text();
+    if (marginLabel === "Sales Margin") {
+        $("#marginLabel").text("Markup");
+        localStorage.setItem("marginLabel", "Markup");
+    }
+    else {
+        $("#marginLabel").text("Sales Margin");
+        localStorage.setItem("marginLabel", "Sales Margin");
+    }
+}
+
 function getInt(value) {
     var num = parseInt(value);
     if (isNaN(num)) {
@@ -113,6 +125,13 @@ function loadData() {
         }
     }
 
+    option = localStorage.getItem("marginLabel")
+    if (option != null) {
+        if (option != "") {
+            $("#marginLabel").text(option);
+        }
+    }
+
 }
 
 function clearData() {
@@ -124,6 +143,7 @@ function clearData() {
     $("#option3Label").text("Option 3");
     $("#option4Label").text("Option 4");
     $("#otherLabel").text("Other");
+    $("#marginLabel").text("Sales Margin");
 }
 
 function saveData(fieldID) {
