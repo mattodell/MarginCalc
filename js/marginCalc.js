@@ -5,12 +5,10 @@ function addAnotherOption() {
         $("#option2").show(1000);
         $("#optionCount").val("2");
         $("#removeButton").show(1000);
-    }
-    else if (option === "2") {
+    } else if (option === "2") {
         $("#option3").show(1000);
         $("#optionCount").val("3");
-    }
-    else if (option === "3") {
+    } else if (option === "3") {
         $("#option4").show(1000);
         $("#optionCount").val("4");
         $("#addAnotherButton").hide(1000);
@@ -24,12 +22,10 @@ function removeOption() {
         $("#option2").hide(1000);
         $("#optionCount").val("1");
         $("#removeButton").hide(1000);
-    }
-    else if (option === "3") {
+    } else if (option === "3") {
         $("#option3").hide(1000);
         $("#optionCount").val("2");
-    }
-    else if (option === "4") {
+    } else if (option === "4") {
         $("#option4").hide(1000);
         $("#optionCount").val("3");
         $("#addAnotherButton").show(1000);
@@ -41,20 +37,17 @@ function saveOptionName() {
     var selectedOption = $("#selectedOption").val();
 
     if (selectedOption === 'option1') {
-         $("#option1Label").text($("#modalOptionName").val());
-         localStorage.setItem("option1Label", $("#modalOptionName").val());
-    }
-    else if (selectedOption === 'option2') {
-         $("#option2Label").text($("#modalOptionName").val());
-         localStorage.setItem("option2Label", $("#modalOptionName").val());
-    }
-    else if (selectedOption === 'option3') {
-         $("#option3Label").text($("#modalOptionName").val());
-         localStorage.setItem("option3Label", $("#modalOptionName").val());
-    }
-    else if (selectedOption === 'option4') {
-         $("#option4Label").text($("#modalOptionName").val());
-         localStorage.setItem("option4Label", $("#modalOptionName").val());
+        $("#option1Label").text($("#modalOptionName").val());
+        localStorage.setItem("option1Label", $("#modalOptionName").val());
+    } else if (selectedOption === 'option2') {
+        $("#option2Label").text($("#modalOptionName").val());
+        localStorage.setItem("option2Label", $("#modalOptionName").val());
+    } else if (selectedOption === 'option3') {
+        $("#option3Label").text($("#modalOptionName").val());
+        localStorage.setItem("option3Label", $("#modalOptionName").val());
+    } else if (selectedOption === 'option4') {
+        $("#option4Label").text($("#modalOptionName").val());
+        localStorage.setItem("option4Label", $("#modalOptionName").val());
     }
 
 }
@@ -78,7 +71,7 @@ function getFloat(value) {
 }
 
 function loadData() {
-    $("input:text").each(function() {
+    $("input:text").each(function () {
         $(this).val(localStorage.getItem($(this).attr('id')));
     });
 
@@ -503,3 +496,24 @@ function Popup(data) {
 
     return true;
 }
+
+var tableToExcel = (function () {
+    var uri = 'data:application/vnd.ms-excel;base64,',
+        template = '<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns="http://www.w3.org/TR/REC-html40"><head><!--[if gte mso 9]><xml><x:ExcelWorkbook><x:ExcelWorksheets><x:ExcelWorksheet><x:Name>{worksheet}</x:Name><x:WorksheetOptions><x:DisplayGridlines/></x:WorksheetOptions></x:ExcelWorksheet></x:ExcelWorksheets></x:ExcelWorkbook></xml><![endif]--><meta http-equiv="content-type" content="text/plain; charset=UTF-8"/></head><body><table>{table}</table></body></html>',
+        base64 = function (s) {
+            return window.btoa(unescape(encodeURIComponent(s)))
+        },
+        format = function (s, c) {
+            return s.replace(/{(\w+)}/g, function (m, p) {
+                return c[p];
+            })
+        }
+    return function (table, name) {
+        if (!table.nodeType) table = document.getElementById(table)
+        var ctx = {
+            worksheet: name || 'Worksheet',
+            table: table.innerHTML
+        }
+        window.location.href = uri + base64(format(template, ctx))
+    }
+})()
