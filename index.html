@@ -149,7 +149,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="td-nowrap">Other</td>
+                    <td class="td-nowrap"><a id="otherLabel" href="#optionModal" data-toggle="modal" data-target="#optionModal">Other</a></td>
                     <td class="td-center">
                         <input class="input-number" type="text" id="qty_l9" name="qty_l9" onchange="calculateAll(this.id);" />
                     </td>
@@ -1104,10 +1104,11 @@
                 } else if (e.relatedTarget.id === 'option3Label') {
                     $("#selectedOption").val('option3');
                     $("#modalOptionName").val($("#option3Label").text());
-                } else if (e.relatedTarget.id === 'option4Label') {
-                    $("#selectedOption").val('option4');
-                    $("#modalOptionName").val($("#option4Label").text());
+                } else if (e.relatedTarget.id === 'otherLabel') {
+                    $("#selectedOption").val('other');
+                    $("#modalOptionName").val($("#otherLabel").text());
                 }
+
 
             });
         });

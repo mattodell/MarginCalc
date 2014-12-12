@@ -48,6 +48,9 @@ function saveOptionName() {
     } else if (selectedOption === 'option4') {
         $("#option4Label").text($("#modalOptionName").val());
         localStorage.setItem("option4Label", $("#modalOptionName").val());
+    } else if (selectedOption === 'other') {
+        $("#otherLabel").text($("#modalOptionName").val());
+        localStorage.setItem("otherLabel", $("#modalOptionName").val());
     }
 
 }
@@ -103,6 +106,13 @@ function loadData() {
         }
     }
 
+    option = localStorage.getItem("otherLabel")
+    if (option != null) {
+        if (option != "") {
+            $("#otherLabel").text(option);
+        }
+    }
+
 }
 
 function clearData() {
@@ -113,6 +123,7 @@ function clearData() {
     $("#option2Label").text("Option 2");
     $("#option3Label").text("Option 3");
     $("#option4Label").text("Option 4");
+    $("#otherLabel").text("Other");
 }
 
 function saveData(fieldID) {
