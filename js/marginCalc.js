@@ -1,3 +1,4 @@
+// Unhide the next option table
 function addAnotherOption() {
     var option = $("#optionCount").val();
 
@@ -15,6 +16,7 @@ function addAnotherOption() {
     }
 }
 
+// Hide an option table
 function removeOption() {
     var option = $("#optionCount").val();
 
@@ -33,6 +35,7 @@ function removeOption() {
     }
 }
 
+// Save a custom option title
 function saveOptionName() {
     var selectedOption = $("#selectedOption").val();
 
@@ -55,18 +58,43 @@ function saveOptionName() {
 
 }
 
+// Toggle column title and calculations between sales margin and markup
 function toggleMarginMarkup() {
     var marginLabel =  $("#marginLabel").text();
     if (marginLabel === "Sales Margin") {
         $("#marginLabel").text("Markup");
         localStorage.setItem("marginLabel", "Markup");
-    }
-    else {
+    } else {
         $("#marginLabel").text("Sales Margin");
         localStorage.setItem("marginLabel", "Sales Margin");
     }
+
+    calculateAll();
 }
 
+// Toggle the discount type between 1-tier and 2-tier for all options
+function toggleDiscountType() {
+    var discountType =  $("#discountType").val();
+
+    if (discountType === "(2-tier)") {
+        $(".discountType").each(function () {
+            $(this).text("(1-tier)");
+        });
+        $("#discountType").val("(1-tier)");
+        localStorage.setItem("discountType", "(1-tier)");
+    }
+    else {
+        $(".discountType").each(function () {
+            $(this).text("(2-tier)");
+        });
+        $("#discountType").val("(2-tier)");
+        localStorage.setItem("discountType", "(2-tier)");
+    }
+
+    calculateAll();
+}
+
+// return an integer value or 0 if NaN
 function getInt(value) {
     var num = parseInt(value);
     if (isNaN(num)) {
@@ -76,6 +104,7 @@ function getInt(value) {
     }
 }
 
+// return an float value or 0 if NaN
 function getFloat(value) {
     var num = parseFloat(value);
     if (isNaN(num)) {
@@ -85,6 +114,7 @@ function getFloat(value) {
     }
 }
 
+// load all data from local storage
 function loadData() {
     $("input:text").each(function () {
         $(this).val(localStorage.getItem($(this).attr('id')));
@@ -132,8 +162,19 @@ function loadData() {
         }
     }
 
+    option = localStorage.getItem("discountType")
+    if (option != null) {
+        if (option != "") {
+            $(".discountType").each(function () {
+                $(this).text(option);
+            });
+            $("#discountType").val(option);
+        }
+    }
+
 }
 
+// clear local storage and reset column and row headers to default values
 function clearData() {
     $("input:text").val("");
     localStorage.clear();
@@ -144,10 +185,24 @@ function clearData() {
     $("#option4Label").text("Option 4");
     $("#otherLabel").text("Other");
     $("#marginLabel").text("Sales Margin");
+    $(".discountType").each(function () {
+        $(this).text("(2-tier)");
+    });
+    $("#discountType").val("(2-tier)");
 }
 
+// save the value of the passed input parameter to local storage
 function saveData(fieldID) {
     localStorage.setItem(fieldID, $("#" + fieldID).val());
+}
+
+function getMarginMarkup(margin, net) {
+    if ($("#marginLabel").text() === "Sales Margin") {
+        return net * (1 + (getFloat(margin) / 100));
+    }
+    else {
+        return (net * (getFloat(margin) / 100)) + net;
+    }
 }
 
 //Calculate all values
@@ -163,93 +218,99 @@ function calculateAll(fieldID) {
         fillAllDiscount();
     }
 
+    var dm = .50; /* Discount Multiplier */
+
+    if ($("#discountType").val() === "(1-tier)") {
+        dm = 1;
+    }
+
     //Calculate Net for Option 1
-    var net_l1_o1 = ((getFloat($("#list_l1_o1").val())) * .50) * (1 - (getFloat($("#discount_l1_o1").val()) / 100)),
-        net_l2_o1 = ((getFloat($("#list_l2_o1").val())) * .50) * (1 - (getFloat($("#discount_l2_o1").val()) / 100)),
-        net_l3_o1 = ((getFloat($("#list_l3_o1").val())) * .50) * (1 - (getFloat($("#discount_l3_o1").val()) / 100)),
-        net_l4_o1 = ((getFloat($("#list_l4_o1").val())) * .50) * (1 - (getFloat($("#discount_l4_o1").val()) / 100)),
-        net_l5_o1 = ((getFloat($("#list_l5_o1").val())) * .50) * (1 - (getFloat($("#discount_l5_o1").val()) / 100)),
-        net_l6_o1 = ((getFloat($("#list_l6_o1").val())) * .50) * (1 - (getFloat($("#discount_l6_o1").val()) / 100)),
-        net_l7_o1 = ((getFloat($("#list_l7_o1").val())) * .50) * (1 - (getFloat($("#discount_l7_o1").val()) / 100)),
-        net_l8_o1 = ((getFloat($("#list_l8_o1").val())) * .50) * (1 - (getFloat($("#discount_l8_o1").val()) / 100)),
-        net_l9_o1 = ((getFloat($("#list_l9_o1").val())) * .50) * (1 - (getFloat($("#discount_l9_o1").val()) / 100));
+    var net_l1_o1 = ((getFloat($("#list_l1_o1").val())) * dm) * (1 - (getFloat($("#discount_l1_o1").val()) / 100)),
+        net_l2_o1 = ((getFloat($("#list_l2_o1").val())) * dm) * (1 - (getFloat($("#discount_l2_o1").val()) / 100)),
+        net_l3_o1 = ((getFloat($("#list_l3_o1").val())) * dm) * (1 - (getFloat($("#discount_l3_o1").val()) / 100)),
+        net_l4_o1 = ((getFloat($("#list_l4_o1").val())) * dm) * (1 - (getFloat($("#discount_l4_o1").val()) / 100)),
+        net_l5_o1 = ((getFloat($("#list_l5_o1").val())) * dm) * (1 - (getFloat($("#discount_l5_o1").val()) / 100)),
+        net_l6_o1 = ((getFloat($("#list_l6_o1").val())) * dm) * (1 - (getFloat($("#discount_l6_o1").val()) / 100)),
+        net_l7_o1 = ((getFloat($("#list_l7_o1").val())) * dm) * (1 - (getFloat($("#discount_l7_o1").val()) / 100)),
+        net_l8_o1 = ((getFloat($("#list_l8_o1").val())) * dm) * (1 - (getFloat($("#discount_l8_o1").val()) / 100)),
+        net_l9_o1 = ((getFloat($("#list_l9_o1").val())) * dm) * (1 - (getFloat($("#discount_l9_o1").val()) / 100));
 
     //Calculate Net for Option 2
-    var net_l1_o2 = ((getFloat($("#list_l1_o2").val())) * .50) * (1 - (getFloat($("#discount_l1_o2").val()) / 100)),
-        net_l2_o2 = ((getFloat($("#list_l2_o2").val())) * .50) * (1 - (getFloat($("#discount_l2_o2").val()) / 100)),
-        net_l3_o2 = ((getFloat($("#list_l3_o2").val())) * .50) * (1 - (getFloat($("#discount_l3_o2").val()) / 100)),
-        net_l4_o2 = ((getFloat($("#list_l4_o2").val())) * .50) * (1 - (getFloat($("#discount_l4_o2").val()) / 100)),
-        net_l5_o2 = ((getFloat($("#list_l5_o2").val())) * .50) * (1 - (getFloat($("#discount_l5_o2").val()) / 100)),
-        net_l6_o2 = ((getFloat($("#list_l6_o2").val())) * .50) * (1 - (getFloat($("#discount_l6_o2").val()) / 100)),
-        net_l7_o2 = ((getFloat($("#list_l7_o2").val())) * .50) * (1 - (getFloat($("#discount_l7_o2").val()) / 100)),
-        net_l8_o2 = ((getFloat($("#list_l8_o2").val())) * .50) * (1 - (getFloat($("#discount_l8_o2").val()) / 100)),
-        net_l9_o2 = ((getFloat($("#list_l9_o2").val())) * .50) * (1 - (getFloat($("#discount_l9_o2").val()) / 100));
+    var net_l1_o2 = ((getFloat($("#list_l1_o2").val())) * dm) * (1 - (getFloat($("#discount_l1_o2").val()) / 100)),
+        net_l2_o2 = ((getFloat($("#list_l2_o2").val())) * dm) * (1 - (getFloat($("#discount_l2_o2").val()) / 100)),
+        net_l3_o2 = ((getFloat($("#list_l3_o2").val())) * dm) * (1 - (getFloat($("#discount_l3_o2").val()) / 100)),
+        net_l4_o2 = ((getFloat($("#list_l4_o2").val())) * dm) * (1 - (getFloat($("#discount_l4_o2").val()) / 100)),
+        net_l5_o2 = ((getFloat($("#list_l5_o2").val())) * dm) * (1 - (getFloat($("#discount_l5_o2").val()) / 100)),
+        net_l6_o2 = ((getFloat($("#list_l6_o2").val())) * dm) * (1 - (getFloat($("#discount_l6_o2").val()) / 100)),
+        net_l7_o2 = ((getFloat($("#list_l7_o2").val())) * dm) * (1 - (getFloat($("#discount_l7_o2").val()) / 100)),
+        net_l8_o2 = ((getFloat($("#list_l8_o2").val())) * dm) * (1 - (getFloat($("#discount_l8_o2").val()) / 100)),
+        net_l9_o2 = ((getFloat($("#list_l9_o2").val())) * dm) * (1 - (getFloat($("#discount_l9_o2").val()) / 100));
 
     //Calculate Net for Option 3
-    var net_l1_o3 = ((getFloat($("#list_l1_o3").val())) * .50) * (1 - (getFloat($("#discount_l1_o3").val()) / 100)),
-        net_l2_o3 = ((getFloat($("#list_l2_o3").val())) * .50) * (1 - (getFloat($("#discount_l2_o3").val()) / 100)),
-        net_l3_o3 = ((getFloat($("#list_l3_o3").val())) * .50) * (1 - (getFloat($("#discount_l3_o3").val()) / 100)),
-        net_l4_o3 = ((getFloat($("#list_l4_o3").val())) * .50) * (1 - (getFloat($("#discount_l4_o3").val()) / 100)),
-        net_l5_o3 = ((getFloat($("#list_l5_o3").val())) * .50) * (1 - (getFloat($("#discount_l5_o3").val()) / 100)),
-        net_l6_o3 = ((getFloat($("#list_l6_o3").val())) * .50) * (1 - (getFloat($("#discount_l6_o3").val()) / 100)),
-        net_l7_o3 = ((getFloat($("#list_l7_o3").val())) * .50) * (1 - (getFloat($("#discount_l7_o3").val()) / 100)),
-        net_l8_o3 = ((getFloat($("#list_l8_o3").val())) * .50) * (1 - (getFloat($("#discount_l8_o3").val()) / 100)),
-        net_l9_o3 = ((getFloat($("#list_l9_o3").val())) * .50) * (1 - (getFloat($("#discount_l9_o3").val()) / 100));
+    var net_l1_o3 = ((getFloat($("#list_l1_o3").val())) * dm) * (1 - (getFloat($("#discount_l1_o3").val()) / 100)),
+        net_l2_o3 = ((getFloat($("#list_l2_o3").val())) * dm) * (1 - (getFloat($("#discount_l2_o3").val()) / 100)),
+        net_l3_o3 = ((getFloat($("#list_l3_o3").val())) * dm) * (1 - (getFloat($("#discount_l3_o3").val()) / 100)),
+        net_l4_o3 = ((getFloat($("#list_l4_o3").val())) * dm) * (1 - (getFloat($("#discount_l4_o3").val()) / 100)),
+        net_l5_o3 = ((getFloat($("#list_l5_o3").val())) * dm) * (1 - (getFloat($("#discount_l5_o3").val()) / 100)),
+        net_l6_o3 = ((getFloat($("#list_l6_o3").val())) * dm) * (1 - (getFloat($("#discount_l6_o3").val()) / 100)),
+        net_l7_o3 = ((getFloat($("#list_l7_o3").val())) * dm) * (1 - (getFloat($("#discount_l7_o3").val()) / 100)),
+        net_l8_o3 = ((getFloat($("#list_l8_o3").val())) * dm) * (1 - (getFloat($("#discount_l8_o3").val()) / 100)),
+        net_l9_o3 = ((getFloat($("#list_l9_o3").val())) * dm) * (1 - (getFloat($("#discount_l9_o3").val()) / 100));
 
     //Calculate Net for Option 4
-    var net_l1_o4 = ((getFloat($("#list_l1_o4").val())) * .50) * (1 - (getFloat($("#discount_l1_o4").val()) / 100)),
-        net_l2_o4 = ((getFloat($("#list_l2_o4").val())) * .50) * (1 - (getFloat($("#discount_l2_o4").val()) / 100)),
-        net_l3_o4 = ((getFloat($("#list_l3_o4").val())) * .50) * (1 - (getFloat($("#discount_l3_o4").val()) / 100)),
-        net_l4_o4 = ((getFloat($("#list_l4_o4").val())) * .50) * (1 - (getFloat($("#discount_l4_o4").val()) / 100)),
-        net_l5_o4 = ((getFloat($("#list_l5_o4").val())) * .50) * (1 - (getFloat($("#discount_l5_o4").val()) / 100)),
-        net_l6_o4 = ((getFloat($("#list_l6_o4").val())) * .50) * (1 - (getFloat($("#discount_l6_o4").val()) / 100)),
-        net_l7_o4 = ((getFloat($("#list_l7_o4").val())) * .50) * (1 - (getFloat($("#discount_l7_o4").val()) / 100)),
-        net_l8_o4 = ((getFloat($("#list_l8_o4").val())) * .50) * (1 - (getFloat($("#discount_l8_o4").val()) / 100)),
-        net_l9_o4 = ((getFloat($("#list_l9_o4").val())) * .50) * (1 - (getFloat($("#discount_l9_o4").val()) / 100));
+    var net_l1_o4 = ((getFloat($("#list_l1_o4").val())) * dm) * (1 - (getFloat($("#discount_l1_o4").val()) / 100)),
+        net_l2_o4 = ((getFloat($("#list_l2_o4").val())) * dm) * (1 - (getFloat($("#discount_l2_o4").val()) / 100)),
+        net_l3_o4 = ((getFloat($("#list_l3_o4").val())) * dm) * (1 - (getFloat($("#discount_l3_o4").val()) / 100)),
+        net_l4_o4 = ((getFloat($("#list_l4_o4").val())) * dm) * (1 - (getFloat($("#discount_l4_o4").val()) / 100)),
+        net_l5_o4 = ((getFloat($("#list_l5_o4").val())) * dm) * (1 - (getFloat($("#discount_l5_o4").val()) / 100)),
+        net_l6_o4 = ((getFloat($("#list_l6_o4").val())) * dm) * (1 - (getFloat($("#discount_l6_o4").val()) / 100)),
+        net_l7_o4 = ((getFloat($("#list_l7_o4").val())) * dm) * (1 - (getFloat($("#discount_l7_o4").val()) / 100)),
+        net_l8_o4 = ((getFloat($("#list_l8_o4").val())) * dm) * (1 - (getFloat($("#discount_l8_o4").val()) / 100)),
+        net_l9_o4 = ((getFloat($("#list_l9_o4").val())) * dm) * (1 - (getFloat($("#discount_l9_o4").val()) / 100));
 
     //Calculate Retail for Option 1
-    var retail_l1_o1 = net_l1_o1 * (1 + (getFloat($("#mgn_l1").val()) / 100)),
-        retail_l2_o1 = net_l2_o1 * (1 + (getFloat($("#mgn_l2").val()) / 100)),
-        retail_l3_o1 = net_l3_o1 * (1 + (getFloat($("#mgn_l3").val()) / 100)),
-        retail_l4_o1 = net_l4_o1 * (1 + (getFloat($("#mgn_l4").val()) / 100)),
-        retail_l5_o1 = net_l5_o1 * (1 + (getFloat($("#mgn_l5").val()) / 100)),
-        retail_l6_o1 = net_l6_o1 * (1 + (getFloat($("#mgn_l6").val()) / 100)),
-        retail_l7_o1 = net_l7_o1 * (1 + (getFloat($("#mgn_l7").val()) / 100)),
-        retail_l8_o1 = net_l8_o1 * (1 + (getFloat($("#mgn_l8").val()) / 100)),
-        retail_l9_o1 = net_l9_o1 * (1 + (getFloat($("#mgn_l9").val()) / 100));
+    var retail_l1_o1 = getMarginMarkup($("#mgn_l1").val(), net_l1_o1),
+        retail_l2_o1 = getMarginMarkup($("#mgn_l2").val(), net_l2_o1),
+        retail_l3_o1 = getMarginMarkup($("#mgn_l3").val(), net_l3_o1),
+        retail_l4_o1 = getMarginMarkup($("#mgn_l4").val(), net_l4_o1),
+        retail_l5_o1 = getMarginMarkup($("#mgn_l5").val(), net_l5_o1),
+        retail_l6_o1 = getMarginMarkup($("#mgn_l6").val(), net_l6_o1),
+        retail_l7_o1 = getMarginMarkup($("#mgn_l7").val(), net_l7_o1),
+        retail_l8_o1 = getMarginMarkup($("#mgn_l8").val(), net_l8_o1),
+        retail_l9_o1 = getMarginMarkup($("#mgn_l9").val(), net_l9_o1);
 
     //Calculate Retail for Option 2
-    var retail_l1_o2 = net_l1_o2 * (1 + (getFloat($("#mgn_l1").val()) / 100)),
-        retail_l2_o2 = net_l2_o2 * (1 + (getFloat($("#mgn_l2").val()) / 100)),
-        retail_l3_o2 = net_l3_o2 * (1 + (getFloat($("#mgn_l3").val()) / 100)),
-        retail_l4_o2 = net_l4_o2 * (1 + (getFloat($("#mgn_l4").val()) / 100)),
-        retail_l5_o2 = net_l5_o2 * (1 + (getFloat($("#mgn_l5").val()) / 100)),
-        retail_l6_o2 = net_l6_o2 * (1 + (getFloat($("#mgn_l6").val()) / 100)),
-        retail_l7_o2 = net_l7_o2 * (1 + (getFloat($("#mgn_l7").val()) / 100)),
-        retail_l8_o2 = net_l8_o2 * (1 + (getFloat($("#mgn_l8").val()) / 100)),
-        retail_l9_o2 = net_l9_o2 * (1 + (getFloat($("#mgn_l9").val()) / 100));
+    var retail_l1_o2 = getMarginMarkup($("#mgn_l1").val(), net_l1_o2),
+        retail_l2_o2 = getMarginMarkup($("#mgn_l2").val(), net_l2_o2),
+        retail_l3_o2 = getMarginMarkup($("#mgn_l3").val(), net_l3_o2),
+        retail_l4_o2 = getMarginMarkup($("#mgn_l4").val(), net_l4_o2),
+        retail_l5_o2 = getMarginMarkup($("#mgn_l5").val(), net_l5_o2),
+        retail_l6_o2 = getMarginMarkup($("#mgn_l6").val(), net_l6_o2),
+        retail_l7_o2 = getMarginMarkup($("#mgn_l7").val(), net_l7_o2),
+        retail_l8_o2 = getMarginMarkup($("#mgn_l8").val(), net_l8_o2),
+        retail_l9_o2 = getMarginMarkup($("#mgn_l9").val(), net_l9_o2);
 
     //Calculate Retail for Option 3
-    var retail_l1_o3 = net_l1_o3 * (1 + (getFloat($("#mgn_l1").val()) / 100)),
-        retail_l2_o3 = net_l2_o3 * (1 + (getFloat($("#mgn_l2").val()) / 100)),
-        retail_l3_o3 = net_l3_o3 * (1 + (getFloat($("#mgn_l3").val()) / 100)),
-        retail_l4_o3 = net_l4_o3 * (1 + (getFloat($("#mgn_l4").val()) / 100)),
-        retail_l5_o3 = net_l5_o3 * (1 + (getFloat($("#mgn_l5").val()) / 100)),
-        retail_l6_o3 = net_l6_o3 * (1 + (getFloat($("#mgn_l6").val()) / 100)),
-        retail_l7_o3 = net_l7_o3 * (1 + (getFloat($("#mgn_l7").val()) / 100)),
-        retail_l8_o3 = net_l8_o3 * (1 + (getFloat($("#mgn_l8").val()) / 100)),
-        retail_l9_o3 = net_l9_o3 * (1 + (getFloat($("#mgn_l9").val()) / 100));
+    var retail_l1_o3 = getMarginMarkup($("#mgn_l1").val(), net_l1_o3),
+        retail_l2_o3 = getMarginMarkup($("#mgn_l2").val(), net_l2_o3),
+        retail_l3_o3 = getMarginMarkup($("#mgn_l3").val(), net_l3_o3),
+        retail_l4_o3 = getMarginMarkup($("#mgn_l4").val(), net_l4_o3),
+        retail_l5_o3 = getMarginMarkup($("#mgn_l5").val(), net_l5_o3),
+        retail_l6_o3 = getMarginMarkup($("#mgn_l6").val(), net_l6_o3),
+        retail_l7_o3 = getMarginMarkup($("#mgn_l7").val(), net_l7_o3),
+        retail_l8_o3 = getMarginMarkup($("#mgn_l8").val(), net_l8_o3),
+        retail_l9_o3 = getMarginMarkup($("#mgn_l9").val(), net_l9_o3);
 
     //Calculate Retail for Option 4
-    var retail_l1_o4 = net_l1_o4 * (1 + (getFloat($("#mgn_l1").val()) / 100)),
-        retail_l2_o4 = net_l2_o4 * (1 + (getFloat($("#mgn_l2").val()) / 100)),
-        retail_l3_o4 = net_l3_o4 * (1 + (getFloat($("#mgn_l3").val()) / 100)),
-        retail_l4_o4 = net_l4_o4 * (1 + (getFloat($("#mgn_l4").val()) / 100)),
-        retail_l5_o4 = net_l5_o4 * (1 + (getFloat($("#mgn_l5").val()) / 100)),
-        retail_l6_o4 = net_l6_o4 * (1 + (getFloat($("#mgn_l6").val()) / 100)),
-        retail_l7_o4 = net_l7_o4 * (1 + (getFloat($("#mgn_l7").val()) / 100)),
-        retail_l8_o4 = net_l8_o4 * (1 + (getFloat($("#mgn_l8").val()) / 100)),
-        retail_l9_o4 = net_l9_o4 * (1 + (getFloat($("#mgn_l9").val()) / 100));
+    var retail_l1_o4 = getMarginMarkup($("#mgn_l1").val(), net_l1_o4),
+        retail_l2_o4 = getMarginMarkup($("#mgn_l2").val(), net_l2_o4),
+        retail_l3_o4 = getMarginMarkup($("#mgn_l3").val(), net_l3_o4),
+        retail_l4_o4 = getMarginMarkup($("#mgn_l4").val(), net_l4_o4),
+        retail_l5_o4 = getMarginMarkup($("#mgn_l5").val(), net_l5_o4),
+        retail_l6_o4 = getMarginMarkup($("#mgn_l6").val(), net_l6_o4),
+        retail_l7_o4 = getMarginMarkup($("#mgn_l7").val(), net_l7_o4),
+        retail_l8_o4 = getMarginMarkup($("#mgn_l8").val(), net_l8_o4),
+        retail_l9_o4 = getMarginMarkup($("#mgn_l9").val(), net_l9_o4);
 
     // Assign quantity values from the table
     var qty_l1 = getInt($("#qty_l1").val()),
@@ -507,6 +568,8 @@ function fillAllDiscount() {
     saveData("discount_l9_o1");
 }
 
+// Shows the print table div, collects all the data in a variable,
+//   hides the div and calls the popup function
 function printTable() {
     $("#printDiv").show();
     var data = $("#printDiv").html();
@@ -514,6 +577,7 @@ function printTable() {
     Popup(data);
 }
 
+// Creates a popup with the print data and prints it
 function Popup(data) {
     var mywindow = window.open('', 'House of Locks Margin Calculations');
     mywindow.document.write('<html><head><title>House of Locks Margin Calculations</title>');
