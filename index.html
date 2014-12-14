@@ -10,9 +10,12 @@
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-        <![endif]-->
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <script type="text/javascript">
+            alert("Browsers prior to Internet Explorer 9 are not supported.  Please upgrade your browser or try Firefox or Chrome.");
+        </script>
+    <![endif]-->
 </head>
 
 <body>
@@ -140,11 +143,12 @@
                     <td class="td-metaheader" colspan="4">
                         <a id="option1Label" href="#optionModal" data-toggle="modal" data-target="#optionModal">Option 1</a>
                         <input type="hidden" id="selectedOption" />
+                        <input type="hidden" id="discountType" value="(2-tier)" />
                     </td>
                 </tr>
                 <tr>
                     <th class="td-center th-doubleheader">List</th>
-                    <th class="td-center th-doubleheader">Discount (50%/x)</th>
+                    <th class="td-center th-doubleheader">Discount<br><a href="#" class="discountType" onclick="toggleDiscountType();">(2-tier)</a></th>
                     <th class="td-center th-doubleheader">Net</th>
                     <th class="td-center th-doubleheader">Sale Price</th>
                 </tr>
@@ -302,7 +306,7 @@
                 </tr>
                 <tr>
                     <th class="td-center th-doubleheader">List</th>
-                    <th class="td-center th-doubleheader">Discount (50%/x)</th>
+                    <th class="td-center th-doubleheader">Discount<br><a href="#" class="discountType" onclick="toggleDiscountType();">(2-tier)</a></th>
                     <th class="td-center th-doubleheader">Net</th>
                     <th class="td-center th-doubleheader">Sale Price</th>
                 </tr>
@@ -460,7 +464,7 @@
                 </tr>
                 <tr>
                     <th class="td-center th-doubleheader">List</th>
-                    <th class="td-center th-doubleheader">Discount (50%/x)</th>
+                    <th class="td-center th-doubleheader">Discount<br><a href="#" class="discountType" onclick="toggleDiscountType();">(2-tier)</a></th>
                     <th class="td-center th-doubleheader">Net</th>
                     <th class="td-center th-doubleheader">Sale Price</th>
                 </tr>
@@ -618,7 +622,7 @@
                 </tr>
                 <tr>
                     <th class="td-center th-doubleheader">List</th>
-                    <th class="td-center th-doubleheader">Discount (50%/x)</th>
+                    <th class="td-center th-doubleheader">Discount<br><a href="#" class="discountType" onclick="toggleDiscountType();">(2-tier)</a></th>
                     <th class="td-center th-doubleheader">Net</th>
                     <th class="td-center th-doubleheader">Sale Price</th>
                 </tr>
