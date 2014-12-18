@@ -1,4 +1,9 @@
+<<<<<<< HEAD
+var optionnum = "1"
+
+=======
 // Unhide the next option table
+>>>>>>> 44d9e2749816e4b9f554fcd815a911ee6ebfaf1b
 function addAnotherOption() {
     var option = $("#optionCount").val();
 
@@ -6,13 +11,16 @@ function addAnotherOption() {
         $("#option2").show(1000);
         $("#optionCount").val("2");
         $("#removeButton").show(1000);
+        optionnum = "2"
     } else if (option === "2") {
         $("#option3").show(1000);
         $("#optionCount").val("3");
+        optionnum = "3"
     } else if (option === "3") {
         $("#option4").show(1000);
         $("#optionCount").val("4");
         $("#addAnotherButton").hide(1000);
+        optionnum = "4"
     }
 }
 
@@ -24,13 +32,16 @@ function removeOption() {
         $("#option2").hide(1000);
         $("#optionCount").val("1");
         $("#removeButton").hide(1000);
+        optionnum = "1"
     } else if (option === "3") {
         $("#option3").hide(1000);
         $("#optionCount").val("2");
+        optionnum = "2"
     } else if (option === "4") {
         $("#option4").hide(1000);
         $("#optionCount").val("3");
         $("#addAnotherButton").show(1000);
+        optionnum = "3"
 
     }
 }
@@ -60,7 +71,7 @@ function saveOptionName() {
 
 // Toggle column title and calculations between sales margin and markup
 function toggleMarginMarkup() {
-    var marginLabel =  $("#marginLabel").text();
+    var marginLabel = $("#marginLabel").text();
     if (marginLabel === "Sales Margin") {
         $("#marginLabel").text("Markup");
         localStorage.setItem("marginLabel", "Markup");
@@ -571,10 +582,87 @@ function fillAllDiscount() {
 // Shows the print table div, collects all the data in a variable,
 //   hides the div and calls the popup function
 function printTable() {
+    PopulatePrintTable();
     $("#printDiv").show();
     var data = $("#printDiv").html();
     $("#printDiv").hide();
     Popup(data);
+}
+//Method to popoulate the print table structure from the entered options and calculations.
+function PopulatePrintTable() {
+
+    for (i = 1; i <= optionnum; i++) {
+        $('#p_option' + i + 'Label').text(document.getElementById('option' + i + 'Label').text);
+        $('#p_option' + i + 'total').text(document.getElementById('option' + i + 'Label').text + " Total");
+        //Passage Row
+        $('#p_qty_l1_o' + i).text($("#qty_l1").val());
+        $('#p_mgn_l1_o' + i).text($("#mgn_l1").val() + "%");
+        $('#p_list_l1_o' + i).text("$" + $('#list_l1_o' + i).val());
+        $('#p_discount_l1_o' + i).text($('#discount_l1_o' + i).val() + "%");
+        $('#p_net_l1_o' + i).text($('#net_l1_o' + i).text());
+        $('#p_retail_l1_o' + i).text($('#retail_l1_o' + i).text());
+        //Dummy Row
+        $('#p_qty_l2_o' + i).text($("#qty_l2").val());
+        $('#p_mgn_l2_o' + i).text($("#mgn_l2").val() + "%");
+        $('#p_list_l2_o' + i).text("$" + $('#list_l2_o' + i).val());
+        $('#p_discount_l2_o' + i).text($('#discount_l2_o' + i).val() + "%");
+        $('#p_net_l2_o' + i).text($('#net_l2_o' + i).text());
+        $('#p_retail_l2_o' + i).text($('#retail_l2_o' + i).text());
+        //Privacy Row
+        $('#p_qty_l3_o' + i).text($("#qty_l3").val());
+        $('#p_mgn_l3_o' + i).text($("#mgn_l3").val() + "%");
+        $('#p_list_l3_o' + i).text("$" + $('#list_l3_o' + i).val());
+        $('#p_discount_l3_o' + i).text($('#discount_l3_o' + i).val() + "%");
+        $('#p_net_l3_o' + i).text($('#net_l3_o' + i).text());
+        $('#p_retail_l3_o' + i).text($('#retail_l3_o' + i).text());
+        //Keyed Row
+        $('#p_qty_l4_o' + i).text($("#qty_l4").val());
+        $('#p_mgn_l4_o' + i).text($("#mgn_l4").val() + "%");
+        $('#p_list_l4_o' + i).text("$" + $('#list_l4_o' + i).val());
+        $('#p_discount_l4_o' + i).text($('#discount_l4_o' + i).val() + "%");
+        $('#p_net_l4_o' + i).text($('#net_l4_o' + i).text());
+        $('#p_retail_l4_o' + i).text($('#retail_l4_o' + i).text());
+        //Entry Row
+        $('#p_qty_l5_o' + i).text($("#qty_l5").val());
+        $('#p_mgn_l5_o' + i).text($("#mgn_l5").val() + "%");
+        $('#p_list_l5_o' + i).text("$" + $('#list_l5_o' + i).val());
+        $('#p_discount_l5_o' + i).text($('#discount_l5_o' + i).val() + "%");
+        $('#p_net_l5_o' + i).text($('#net_l5_o' + i).text());
+        $('#p_retail_l5_o' + i).text($('#retail_l5_o' + i).text());
+        //Deadbolt Row
+        $('#p_qty_l6_o' + i).text($("#qty_l6").val());
+        $('#p_mgn_l6_o' + i).text($("#mgn_l6").val() + "%");
+        $('#p_list_l6_o' + i).text("$" + $('#list_l6_o' + i).val());
+        $('#p_discount_l6_o' + i).text($('#discount_l6_o' + i).val() + "%");
+        $('#p_net_l6_o' + i).text($('#net_l6_o' + i).text());
+        $('#p_retail_l6_o' + i).text($('#retail_l6_o' + i).text());
+        //Electronic Lock Row
+        $('#p_qty_l7_o' + i).text($("#qty_l7").val());
+        $('#p_mgn_l7_o' + i).text($("#mgn_l7").val() + "%");
+        $('#p_list_l7_o' + i).text("$" + $('#list_l7_o' + i).val());
+        $('#p_discount_l7_o' + i).text($('#discount_l7_o' + i).val() + "%");
+        $('#p_net_l7_o' + i).text($('#net_l7_o' + i).text());
+        $('#p_retail_l7_o' + i).text($('#retail_l7_o' + i).text());
+        //Electronic Deadbolt Row
+        $('#p_qty_l8_o' + i).text($("#qty_l8").val());
+        $('#p_mgn_l8_o' + i).text($("#mgn_l8").val() + "%");
+        $('#p_list_l8_o' + i).text("$" + $('#list_l8_o' + i).val());
+        $('#p_discount_l8_o' + i).text($('#discount_l8_o' + i).val() + "%");
+        $('#p_net_l8_o' + i).text($('#net_l8_o' + i).text());
+        $('#p_retail_l8_o' + i).text($('#retail_l8_o' + i).text());
+        //Other Row
+        $('#p_qty_l9_o' + i).text($("#qty_l9").val());
+        $('#p_mgn_l9_o' + i).text($("#mgn_l9").val() + "%");
+        $('#p_list_l9_o' + i).text("$" + $('#list_l9_o' + i).val());
+        $('#p_discount_l9_o' + i).text($('#discount_l9_o' + i).val() + "%");
+        $('#p_net_l9_o' + i).text($('#net_l9_o' + i).text());
+        $('#p_retail_l9_o' + i).text($('#retail_l9_o' + i).text());
+        //Total Row
+        $('#p_totCost_o' + i).text($('#totCost_o' + i).text());
+        $('#p_totRetail_o' + i).text($('#totRetail_o' + i).text());
+        $('#p_totMargin_o' + i).text($('#totMargin_o' + i).text());
+    }
+
 }
 
 // Creates a popup with the print data and prints it
