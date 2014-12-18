@@ -1,9 +1,6 @@
-<<<<<<< HEAD
-var optionnum = "1"
+var optionnum = "1";
 
-=======
 // Unhide the next option table
->>>>>>> 44d9e2749816e4b9f554fcd815a911ee6ebfaf1b
 function addAnotherOption() {
     var option = $("#optionCount").val();
 
@@ -85,7 +82,7 @@ function toggleMarginMarkup() {
 
 // Toggle the discount type between 1-tier and 2-tier for all options
 function toggleDiscountType() {
-    var discountType =  $("#discountType").val();
+    var discountType = $("#discountType").val();
 
     if (discountType === "(2-tier)") {
         $(".discountType").each(function () {
@@ -93,8 +90,7 @@ function toggleDiscountType() {
         });
         $("#discountType").val("(1-tier)");
         localStorage.setItem("discountType", "(1-tier)");
-    }
-    else {
+    } else {
         $(".discountType").each(function () {
             $(this).text("(2-tier)");
         });
@@ -210,8 +206,7 @@ function saveData(fieldID) {
 function getMarginMarkup(margin, net) {
     if ($("#marginLabel").text() === "Sales Margin") {
         return net * (1 + (getFloat(margin) / 100));
-    }
-    else {
+    } else {
         return (net * (getFloat(margin) / 100)) + net;
     }
 }
