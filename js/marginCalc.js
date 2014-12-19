@@ -214,8 +214,8 @@ function calculateAll(fieldID) {
         fillAllSalesMargin();
     }*/
 
-    if (fieldID === "discount_l1_o1") {
-        fillAllDiscount();
+    if (fieldID.substring(0,11) === "discount_l1") {
+        fillAllDiscount(fieldID.substring(12));
     }
 
     var dm = .50; /* Discount Multiplier */
@@ -547,25 +547,26 @@ function fillAllSalesMargin() {
 }
 
 // Fill all discounts from the first value
-function fillAllDiscount() {
-    var margin = $("#discount_l1_o1").val();
-    $("#discount_l2_o1").val(margin);
-    $("#discount_l3_o1").val(margin);
-    $("#discount_l4_o1").val(margin);
-    $("#discount_l5_o1").val(margin);
-    $("#discount_l6_o1").val(margin);
-    $("#discount_l7_o1").val(margin);
-    $("#discount_l8_o1").val(margin);
-    $("#discount_l9_o1").val(margin);
+function fillAllDiscount(optionNum) {
 
-    saveData("discount_l2_o1");
-    saveData("discount_l3_o1");
-    saveData("discount_l4_o1");
-    saveData("discount_l5_o1");
-    saveData("discount_l6_o1");
-    saveData("discount_l7_o1");
-    saveData("discount_l8_o1");
-    saveData("discount_l9_o1");
+    var margin = $("#discount_l1_" + optionNum).val();
+    $("#discount_l2_" + optionNum).val(margin);
+    $("#discount_l3_" + optionNum).val(margin);
+    $("#discount_l4_" + optionNum).val(margin);
+    $("#discount_l5_" + optionNum).val(margin);
+    $("#discount_l6_" + optionNum).val(margin);
+    $("#discount_l7_" + optionNum).val(margin);
+    $("#discount_l8_" + optionNum).val(margin);
+    $("#discount_l9_" + optionNum).val(margin);
+
+    saveData("discount_l2_" + optionNum);
+    saveData("discount_l3_" + optionNum);
+    saveData("discount_l4_" + optionNum);
+    saveData("discount_l5_" + optionNum);
+    saveData("discount_l6_" + optionNum);
+    saveData("discount_l7_" + optionNum);
+    saveData("discount_l8_" + optionNum);
+    saveData("discount_l9_" + optionNum);
 }
 
 // Shows the print table div, collects all the data in a variable,
