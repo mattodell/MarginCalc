@@ -652,6 +652,7 @@ function PopulatePrintTable() {
         $('#p_net_l8_o' + i).text($('#net_l8_o' + i).text());
         $('#p_retail_l8_o' + i).text($('#retail_l8_o' + i).text());
         //Other Row
+        $('#p_other_l9_o' + i).text(document.getElementById('otherLabel').text);
         $('#p_qty_l9_o' + i).text($("#qty_l9").val());
         $('#p_mgn_l9_o' + i).text($("#mgn_l9").val() + "%");
         $('#p_list_l9_o' + i).text("$" + $('#list_l9_o' + i).val());
