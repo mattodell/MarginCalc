@@ -55,7 +55,8 @@
                 <tr>
                     <th class="td-nowrap th-doubleheader">Function</th>
                     <th class="td-center th-doubleheader">Qty</th>
-                    <th class="td-center th-doubleheader"><a id="marginLabel" href="#" title="Click to toggle Sales Margin or Markup" onclick="toggleMarginMarkup();">Sales Margin</a></th>
+                    <th class="td-center th-doubleheader"><a id="marginLabel" href="#" title="Click to toggle Sales Margin or Markup" onclick="toggleMarginMarkup();">Sales Margin</a>
+                    </th>
                 </tr>
                 <tr>
                     <td class="td-nowrap">Passage</td>
@@ -74,69 +75,70 @@
                     <td class="td-center">
                         <input class="input-number" type="text" id="mgn_l2" name="mgn_l2" onchange="calculateAll(this.id);" />
                     </td>
-                <tr>
-                    <td class="td-nowrap">Privacy</td>
-                    <td class="td-center">
-                        <input class="input-number" type="text" id="qty_l3" name="qty_l3" onchange="calculateAll(this.id);" />
-                    </td>
-                    <td class="td-center">
-                        <input class="input-number" type="text" id="mgn_l3" name="mgn_l3" onchange="calculateAll(this.id);" />
-                    </td>
-                </tr>
-                <tr>
-                    <td class="td-nowrap">Keyed</td>
-                    <td class="td-center">
-                        <input class="input-number" type="text" id="qty_l4" name="qty_l4" onchange="calculateAll(this.id);" />
-                    </td>
-                    <td class="td-center">
-                        <input class="input-number" type="text" id="mgn_l4" name="mgn_l4" onchange="calculateAll(this.id);" />
-                    </td>
-                </tr>
-                <tr>
-                    <td class="td-nowrap">Entry</td>
-                    <td class="td-center">
-                        <input class="input-number" type="text" id="qty_l5" name="qty_l5" onchange="calculateAll(this.id);" />
-                    </td>
-                    <td class="td-center">
-                        <input class="input-number" type="text" id="mgn_l5" name="mgn_l5" onchange="calculateAll(this.id);" />
-                    </td>
-                </tr>
-                <tr>
-                    <td class="td-nowrap">Deadbolt</td>
-                    <td class="td-center">
-                        <input class="input-number" type="text" id="qty_l6" name="qty_l6" onchange="calculateAll(this.id);" />
-                    </td>
-                    <td class="td-center">
-                        <input class="input-number" type="text" id="mgn_l6" name="mgn_l6" onchange="calculateAll(this.id);" />
-                    </td>
-                </tr>
-                <tr>
-                    <td class="td-nowrap">Electronic Lock</td>
-                    <td class="td-center">
-                        <input class="input-number" type="text" id="qty_l7" name="qty_l7" onchange="calculateAll(this.id);" />
-                    </td>
-                    <td class="td-center">
-                        <input class="input-number" type="text" id="mgn_l7" name="mgn_l7" onchange="calculateAll(this.id);" />
-                    </td>
-                </tr>
-                <tr>
-                    <td class="td-nowrap">Electronic DeadBolt</td>
-                    <td class="td-center">
-                        <input class="input-number" type="text" id="qty_l8" name="qty_l8" onchange="calculateAll(this.id);" />
-                    </td>
-                    <td class="td-center">
-                        <input class="input-number" type="text" id="mgn_l8" name="mgn_l8" onchange="calculateAll(this.id);" />
-                    </td>
-                </tr>
-                <tr>
-                    <td class="td-nowrap"><a id="otherLabel" href="#optionModal" data-toggle="modal" data-target="#optionModal">Other</a></td>
-                    <td class="td-center">
-                        <input class="input-number" type="text" id="qty_l9" name="qty_l9" onchange="calculateAll(this.id);" />
-                    </td>
-                    <td class="td-center">
-                        <input class="input-number" type="text" id="mgn_l9" name="mgn_l9" onchange="calculateAll(this.id);" />
-                    </td>
-                </tr>
+                    <tr>
+                        <td class="td-nowrap">Privacy</td>
+                        <td class="td-center">
+                            <input class="input-number" type="text" id="qty_l3" name="qty_l3" onchange="calculateAll(this.id);" />
+                        </td>
+                        <td class="td-center">
+                            <input class="input-number" type="text" id="mgn_l3" name="mgn_l3" onchange="calculateAll(this.id);" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="td-nowrap">Keyed</td>
+                        <td class="td-center">
+                            <input class="input-number" type="text" id="qty_l4" name="qty_l4" onchange="calculateAll(this.id);" />
+                        </td>
+                        <td class="td-center">
+                            <input class="input-number" type="text" id="mgn_l4" name="mgn_l4" onchange="calculateAll(this.id);" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="td-nowrap">Entry</td>
+                        <td class="td-center">
+                            <input class="input-number" type="text" id="qty_l5" name="qty_l5" onchange="calculateAll(this.id);" />
+                        </td>
+                        <td class="td-center">
+                            <input class="input-number" type="text" id="mgn_l5" name="mgn_l5" onchange="calculateAll(this.id);" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="td-nowrap">Deadbolt</td>
+                        <td class="td-center">
+                            <input class="input-number" type="text" id="qty_l6" name="qty_l6" onchange="calculateAll(this.id);" />
+                        </td>
+                        <td class="td-center">
+                            <input class="input-number" type="text" id="mgn_l6" name="mgn_l6" onchange="calculateAll(this.id);" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="td-nowrap">Electronic Lock</td>
+                        <td class="td-center">
+                            <input class="input-number" type="text" id="qty_l7" name="qty_l7" onchange="calculateAll(this.id);" />
+                        </td>
+                        <td class="td-center">
+                            <input class="input-number" type="text" id="mgn_l7" name="mgn_l7" onchange="calculateAll(this.id);" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="td-nowrap">Electronic DeadBolt</td>
+                        <td class="td-center">
+                            <input class="input-number" type="text" id="qty_l8" name="qty_l8" onchange="calculateAll(this.id);" />
+                        </td>
+                        <td class="td-center">
+                            <input class="input-number" type="text" id="mgn_l8" name="mgn_l8" onchange="calculateAll(this.id);" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="td-nowrap"><a id="otherLabel" href="#optionModal" data-toggle="modal" data-target="#optionModal">Other</a>
+                        </td>
+                        <td class="td-center">
+                            <input class="input-number" type="text" id="qty_l9" name="qty_l9" onchange="calculateAll(this.id);" />
+                        </td>
+                        <td class="td-center">
+                            <input class="input-number" type="text" id="mgn_l9" name="mgn_l9" onchange="calculateAll(this.id);" />
+                        </td>
+                    </tr>
             </table>
         </div>
 
@@ -151,7 +153,10 @@
                 </tr>
                 <tr>
                     <th class="td-center th-doubleheader">List</th>
-                    <th class="td-center th-doubleheader">Discount<br><a href="#" class="discountType" onclick="toggleDiscountType();">(2-tier)</a></th>
+                    <th class="td-center th-doubleheader">Discount ( /x)</th>
+                    <th class="td-center th-doubleheader">Discount
+                        <br><a href="#" class="discountType" onclick="toggleDiscountType();">(2-tier)</a>
+                    </th>
                     <th class="td-center th-doubleheader">Net</th>
                     <th class="td-center th-doubleheader">Sale Price</th>
                 </tr>
@@ -309,7 +314,9 @@
                 </tr>
                 <tr>
                     <th class="td-center th-doubleheader">List</th>
-                    <th class="td-center th-doubleheader">Discount<br><a href="#" class="discountType" onclick="toggleDiscountType();">(2-tier)</a></th>
+                    <th class="td-center th-doubleheader">Discount
+                        <br><a href="#" class="discountType" onclick="toggleDiscountType();">(2-tier)</a>
+                    </th>
                     <th class="td-center th-doubleheader">Net</th>
                     <th class="td-center th-doubleheader">Sale Price</th>
                 </tr>
@@ -467,7 +474,9 @@
                 </tr>
                 <tr>
                     <th class="td-center th-doubleheader">List</th>
-                    <th class="td-center th-doubleheader">Discount<br><a href="#" class="discountType" onclick="toggleDiscountType();">(2-tier)</a></th>
+                    <th class="td-center th-doubleheader">Discount
+                        <br><a href="#" class="discountType" onclick="toggleDiscountType();">(2-tier)</a>
+                    </th>
                     <th class="td-center th-doubleheader">Net</th>
                     <th class="td-center th-doubleheader">Sale Price</th>
                 </tr>
@@ -625,7 +634,9 @@
                 </tr>
                 <tr>
                     <th class="td-center th-doubleheader">List</th>
-                    <th class="td-center th-doubleheader">Discount<br><a href="#" class="discountType" onclick="toggleDiscountType();">(2-tier)</a></th>
+                    <th class="td-center th-doubleheader">Discount
+                        <br><a href="#" class="discountType" onclick="toggleDiscountType();">(2-tier)</a>
+                    </th>
                     <th class="td-center th-doubleheader">Net</th>
                     <th class="td-center th-doubleheader">Sale Price</th>
                 </tr>
@@ -783,7 +794,7 @@
         </div>
         <div class="col-sm-offset-2 col-sm-6">
             <button class="btn btn-sm btn-schlage-darken" type="button" id="clearButton" onclick="clearData();">Clear Form</button>
-            <button class="btn btn-sm btn-schlage-darken" type="button" id="printButton" onclick="printTable();">Print</button>
+            <button class="btn btn-sm btn-schlage-darken" type="button" id="printButton" onclick="PopulatePrintTable();">Print</button>
             <button class="btn btn-sm btn-schlage-darken" type="button" id="emailButton" href="#emailModal" data-toggle="modal" data-target="#emailModal">Email</button>
             <button class="btn btn-sm btn-schlage-darken" type="button" id="excelButton" onclick="tableToExcel('printTable', 'Option Print')">Download to Excel</button>
             <button class="btn btn-sm btn-schlage-darken" type="button" id="refButton" href="#toDoModal" data-toggle="modal" data-target="#toDoModal">Show Margin Turns Reference</button>
@@ -869,7 +880,7 @@
             <tbody>
                 <tr class="td-metaheader">
                     <td colspan="7">
-                        <label id="p_option1Label">Option 1</label>
+                        <label id="p_option1Label">-</label>
                     </td>
                 </tr>
                 <tr>
@@ -884,162 +895,881 @@
                 <tr>
                     <td class="td-nowrap">Passage</td>
                     <td class="td-center">
-                        <label id="p_qty_l1">12</label>
+                        <label id="p_qty_l1_o1">-</label>
                     </td>
                     <td class="td-center">
-                        <label id="p_mgn_l1">35%</label>
+                        <label id="p_mgn_l1_o1">-</label>
                     </td>
                     <td class="td-center">
-                        <label id="p_list_l1_o1">$28.00</label>
+                        <label id="p_list_l1_o1">-</label>
                     </td>
                     <td class="td-center">
-                        <label id="p_discount_l1_o1">50%</label>
+                        <label id="p_discount_l1_o1">-</label>
                     </td>
                     <td class="td-center">
-                        <label id="p_net_l1_o1">$156.00</label>
+                        <label id="p_net_l1_o1">-</label>
                     </td>
                     <td class="td-center">
-                        <label id="p_retail_l1_o1">$212.00</label>
+                        <label id="p_retail_l1_o1">-</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td-nowrap">Dummy</td>
+                    <td class="td-center">
+                        <label id="p_qty_l2_o1">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_mgn_l2_o1">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_list_l2_o1">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_discount_l2_o1">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_net_l2_o1">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_retail_l2_o1">-</label>
                     </td>
                 </tr>
                 <tr>
                     <td class="td-nowrap">Privacy</td>
                     <td class="td-center">
-                        <label id="p_qty_l2">12</label>
+                        <label id="p_qty_l3_o1">-</label>
                     </td>
                     <td class="td-center">
-                        <label id="p_mgn_l2">35%</label>
+                        <label id="p_mgn_l3_o1">-</label>
                     </td>
                     <td class="td-center">
-                        <label id="p_list_l2_o1">$28.00</label>
+                        <label id="p_list_l3_o1">-</label>
                     </td>
                     <td class="td-center">
-                        <label id="p_discount_l2_o1">50%</label>
+                        <label id="p_discount_l3_o1">-</label>
                     </td>
                     <td class="td-center">
-                        <label id="p_net_l2_o1">$156.00</label>
+                        <label id="p_net_l3_o1">-</label>
                     </td>
                     <td class="td-center">
-                        <label id="p_retail_l2_o1">$212.00</label>
+                        <label id="p_retail_l3_o1">-</label>
                     </td>
                 </tr>
                 <tr>
                     <td class="td-nowrap">Keyed</td>
                     <td class="td-center">
-                        <label id="p_qty_l3">12</label>
+                        <label id="p_qty_l4_o1">-</label>
                     </td>
                     <td class="td-center">
-                        <label id="p_mgn_l3">35%</label>
+                        <label id="p_mgn_l4_o1">-</label>
                     </td>
                     <td class="td-center">
-                        <label id="p_list_l3_o1">$28.00</label>
+                        <label id="p_list_l4_o1">-</label>
                     </td>
                     <td class="td-center">
-                        <label id="p_discount_l3_o1">50%</label>
+                        <label id="p_discount_l4_o1">-</label>
                     </td>
                     <td class="td-center">
-                        <label id="p_net_l3_o1">$156.00</label>
+                        <label id="p_net_l4_o1">-</label>
                     </td>
                     <td class="td-center">
-                        <label id="p_retail_l3_o1">$212.00</label>
+                        <label id="p_retail_l4_o1">-</label>
                     </td>
                 </tr>
                 <tr>
                     <td class="td-nowrap">Entry</td>
                     <td class="td-center">
-                        <label id="p_qty_l4">12</label>
+                        <label id="p_qty_l5_o1">-</label>
                     </td>
                     <td class="td-center">
-                        <label id="p_mgn_l4">35%</label>
+                        <label id="p_mgn_l5_o1">-</label>
                     </td>
                     <td class="td-center">
-                        <label id="p_list_l4_o1">$28.00</label>
+                        <label id="p_list_l5_o1">-</label>
                     </td>
                     <td class="td-center">
-                        <label id="p_discount_l4_o1">50%</label>
+                        <label id="p_discount_l5_o1">-</label>
                     </td>
                     <td class="td-center">
-                        <label id="p_net_l4_o1">$156.00</label>
+                        <label id="p_net_l5_o1">-</label>
                     </td>
                     <td class="td-center">
-                        <label id="p_retail_l4_o1">$212.00</label>
+                        <label id="p_retail_l5_o1">-</label>
                     </td>
                 </tr>
                 <tr>
                     <td class="td-nowrap">Deadbolt</td>
                     <td class="td-center">
-                        <label id="p_qty_l5">12</label>
+                        <label id="p_qty_l6_o1">-</label>
                     </td>
                     <td class="td-center">
-                        <label id="p_mgn_l5">35%</label>
+                        <label id="p_mgn_l6_o1">-</label>
                     </td>
                     <td class="td-center">
-                        <label id="p_list_l5_o1">$28.00</label>
+                        <label id="p_list_l6_o1">-</label>
                     </td>
                     <td class="td-center">
-                        <label id="p_discount_l5_o1">50%</label>
+                        <label id="p_discount_l6_o1">-</label>
                     </td>
                     <td class="td-center">
-                        <label id="p_net_l5_o1">$156.00</label>
+                        <label id="p_net_l6_o1">-</label>
                     </td>
                     <td class="td-center">
-                        <label id="p_retail_l5_o1">$212.00</label>
+                        <label id="p_retail_l6_o1">-</label>
                     </td>
                 </tr>
                 <tr>
                     <td class="td-nowrap">Electronic Lock</td>
                     <td class="td-center">
-                        <label id="p_qty_l6">12</label>
+                        <label id="p_qty_l7_o1">-</label>
                     </td>
                     <td class="td-center">
-                        <label id="p_mgn_l6">35%</label>
+                        <label id="p_mgn_l7_o1">-</label>
                     </td>
                     <td class="td-center">
-                        <label id="p_list_l6_o1">$28.00</label>
+                        <label id="p_list_l7_o1">-</label>
                     </td>
                     <td class="td-center">
-                        <label id="p_discount_l6_o1">50%</label>
+                        <label id="p_discount_l7_o1">-</label>
                     </td>
                     <td class="td-center">
-                        <label id="p_net_l6_o1">$156.00</label>
+                        <label id="p_net_l7_o1">-</label>
                     </td>
                     <td class="td-center">
-                        <label id="p_retail_l6_o1">$212.00</label>
+                        <label id="p_retail_l7_o1">-</label>
                     </td>
                 </tr>
                 <tr>
                     <td class="td-nowrap">Electronic Deadbolt</td>
                     <td class="td-center">
-                        <label id="p_qty_l7">12</label>
+                        <label id="p_qty_l8_o1">-</label>
                     </td>
                     <td class="td-center">
-                        <label id="p_mgn_l7">35%</label>
+                        <label id="p_mgn_l8_o1">-</label>
                     </td>
                     <td class="td-center">
-                        <label id="p_list_l7_o1">$28.00</label>
+                        <label id="p_list_l8_o1">-</label>
                     </td>
                     <td class="td-center">
-                        <label id="p_discount_l7_o1">50%</label>
+                        <label id="p_discount_l8_o1">-</label>
                     </td>
                     <td class="td-center">
-                        <label id="p_net_l7o1">$156.00</label>
+                        <label id="p_net_l8_o1">-</label>
                     </td>
                     <td class="td-center">
-                        <label id="p_retail_l7_o1">$212.00</label>
+                        <label id="p_retail_l8_o1">-</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td-nowrap">Other</td>
+                    <td class="td-center">
+                        <label id="p_qty_l9_o1">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_mgn_l9_o1">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_list_l9_o1">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_discount_l9_o1">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_net_l9_o1">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_retail_l9_o1">-</label>
                     </td>
                 </tr>
                 <tr class="td-metaheader">
                     <td colspan="7" class="td-center">
-                        <label>Option 1 Total</label>
+                        <label id='p_option1total'>Total</label>
                     </td>
                 </tr>
                 <tr class="td-metaheader">
                     <td colspan="2" class="td-center">Overall Margin</td>
-                    <td class="td-center success">30%</td>
+                    <td class="td-center ">
+                        <label id="p_totMargin_o1">-</label>
+                    </td>
                     <td class="td-center success">Total Cost</td>
-                    <td class="td-center success">$156</td>
+                    <td class="td-center">
+                        <label id="p_totCost_o1">-</label>
+                    </td>
                     <td class="td-center success">Total Retail</td>
-                    <td class="td-center success">$212</td>
+                    <td class="td-center">
+                        <label id="p_totRetail_o1">-</label>
+                    </td>
+                </tr>
+                <tr></tr>
+                <tr class="td-metaheader">
+                    <td colspan="7">
+                        <label id="p_option2Label">Option 2</label>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="td-nowrap th-doubleheader">Function</th>
+                    <th class="td-center th-doubleheader">Qty</th>
+                    <th class="td-center th-doubleheader">Sales Margin</th>
+                    <th class="td-center th-doubleheader">List</th>
+                    <th class="td-center th-doubleheader">Discount</th>
+                    <th class="td-center th-doubleheader">Net</th>
+                    <th class="td-center th-doubleheader">Retail</th>
+                </tr>
+                <tr>
+                    <td class="td-nowrap">Passage</td>
+                    <td class="td-center">
+                        <label id="p_qty_l1_o2">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_mgn_l1_o2">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_list_l1_o2">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_discount_l1_o2">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_net_l1_o2">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_retail_l1_o2">-</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td-nowrap">Dummy</td>
+                    <td class="td-center">
+                        <label id="p_qty_l2_o2">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_mgn_l2_o2">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_list_l2_o2">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_discount_l2_o2">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_net_l2_o2">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_retail_l2_o2">-</label>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="td-nowrap">Privacy</td>
+                    <td class="td-center">
+                        <label id="p_qty_l3_o2">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_mgn_l3_o2">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_list_l3_o2">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_discount_l3_o2">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_net_l3_o2">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_retail_l3_o2">-</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td-nowrap">Keyed</td>
+                    <td class="td-center">
+                        <label id="p_qty_l4_o2">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_mgn_l4_o2">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_list_l4_o2">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_discount_l4_o2">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_net_l4_o2">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_retail_l4_o2">-</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td-nowrap">Entry</td>
+                    <td class="td-center">
+                        <label id="p_qty_l5_o2">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_mgn_l5_o2">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_list_l5_o2">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_discount_l5_o2">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_net_l5_o2">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_retail_l5_o2">-</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td-nowrap">Deadbolt</td>
+                    <td class="td-center">
+                        <label id="p_qty_l6_o2">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_mgn_l6_o2">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_list_l6_o2">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_discount_l6_o2">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_net_l6_o2">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_retail_l6_o2">-</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td-nowrap">Electronic Lock</td>
+                    <td class="td-center">
+                        <label id="p_qty_l7_o2">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_mgn_l7_o2">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_list_l7_o2">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_discount_l7_o2">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_net_l7_o2">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_retail_l7_o2">-</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td-nowrap">Electronic Deadbolt</td>
+                    <td class="td-center">
+                        <label id="p_qty_l8_o2">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_mgn_l8_o2">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_list_l8_o2">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_discount_l8_o2">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_net_l8_o2">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_retail_l8_o2">-</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td-nowrap">Other</td>
+                    <td class="td-center">
+                        <label id="p_qty_l9_o2">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_mgn_l9_o2">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_list_l9_o2">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_discount_l9_o2">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_net_l9_o2">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_retail_l9_o2">-</label>
+                    </td>
+                </tr>
+                <tr class="td-metaheader">
+                    <td colspan="7" class="td-center">
+                        <label id='p_option2total'>Total</label>
+                    </td>
+                </tr>
+                <tr class="td-metaheader">
+                    <td colspan="2" class="td-center">Overall Margin</td>
+                    <td class="td-center ">
+                        <label id="p_totMargin_o2">-</label>
+                    </td>
+                    <td class="td-center success">Total Cost</td>
+                    <td class="td-center">
+                        <label id="p_totCost_o2">-</label>
+                    </td>
+                    <td class="td-center success">Total Retail</td>
+                    <td class="td-center">
+                        <label id="p_totRetail_o2">-</label>
+                    </td>
+                </tr>
+                <tr class="td-metaheader">
+                    <td colspan="7">
+                        <label id="p_option1Label">Option 3</label>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="td-nowrap th-doubleheader">Function</th>
+                    <th class="td-center th-doubleheader">Qty</th>
+                    <th class="td-center th-doubleheader">Sales Margin</th>
+                    <th class="td-center th-doubleheader">List</th>
+                    <th class="td-center th-doubleheader">Discount</th>
+                    <th class="td-center th-doubleheader">Net</th>
+                    <th class="td-center th-doubleheader">Retail</th>
+                </tr>
+                <tr>
+                    <td class="td-nowrap">Passage</td>
+                    <td class="td-center">
+                        <label id="p_qty_l1_o3">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_mgn_l1_o3">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_list_l1_o3">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_discount_l1_o3">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_net_l1_o3">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_retail_l1_o3">-</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td-nowrap">Dummy</td>
+                    <td class="td-center">
+                        <label id="p_qty_l2_o3">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_mgn_l2_o3">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_list_l2_o3">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_discount_l2_o3">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_net_l2_o3">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_retail_l2_o3">-</label>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="td-nowrap">Privacy</td>
+                    <td class="td-center">
+                        <label id="p_qty_l3_o3">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_mgn_l3_o3">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_list_l3_o3">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_discount_l3_o3">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_net_l3_o3">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_retail_l3_o3">-</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td-nowrap">Keyed</td>
+                    <td class="td-center">
+                        <label id="p_qty_l4_o3">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_mgn_l4_o3">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_list_l4_o3">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_discount_l4_o3">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_net_l4_o3">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_retail_l4_o3">-</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td-nowrap">Entry</td>
+                    <td class="td-center">
+                        <label id="p_qty_l5_o3">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_mgn_l5_o3">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_list_l5_o3">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_discount_l5_o3">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_net_l5_o3">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_retail_l5_o3">-</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td-nowrap">Deadbolt</td>
+                    <td class="td-center">
+                        <label id="p_qty_l6_o3">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_mgn_l6_o3">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_list_l6_o3">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_discount_l6_o3">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_net_l6_o3">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_retail_l6_o3">-</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td-nowrap">Electronic Lock</td>
+                    <td class="td-center">
+                        <label id="p_qty_l7_o3">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_mgn_l7_o3">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_list_l7_o3">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_discount_l7_o3">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_net_l7_o3">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_retail_l7_o3">-</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td-nowrap">Electronic Deadbolt</td>
+                    <td class="td-center">
+                        <label id="p_qty_l8_o3">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_mgn_l8_o3">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_list_l8_o3">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_discount_l8_o3">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_net_l8_o3">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_retail_l8_o3">-</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td-nowrap">Other</td>
+                    <td class="td-center">
+                        <label id="p_qty_l9_o3">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_mgn_l9_o3">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_list_l9_o3">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_discount_l9_o3">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_net_l9_o3">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_retail_l9_o3">-</label>
+                    </td>
+                </tr>
+                <tr class="td-metaheader">
+                    <td colspan="7" class="td-center">
+                        <label>Option 3 Total</label>
+                    </td>
+                </tr>
+                <tr class="td-metaheader">
+                    <td colspan="2" class="td-center">Overall Margin</td>
+                    <td class="td-center ">
+                        <label id="p_totMargin_o3">-</label>
+                    </td>
+                    <td class="td-center success">Total Cost</td>
+                    <td class="td-center">
+                        <label id="p_totCost_o3">-</label>
+                    </td>
+                    <td class="td-center success">Total Retail</td>
+                    <td class="td-center">
+                        <label id="p_totRetail_o3">-</label>
+                    </td>
+                </tr>
+                <tr></tr>
+                <tr class="td-metaheader">
+                    <td colspan="7">
+                        <label id="p_option1Label">Option 4</label>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="td-nowrap th-doubleheader">Function</th>
+                    <th class="td-center th-doubleheader">Qty</th>
+                    <th class="td-center th-doubleheader">Sales Margin</th>
+                    <th class="td-center th-doubleheader">List</th>
+                    <th class="td-center th-doubleheader">Discount</th>
+                    <th class="td-center th-doubleheader">Net</th>
+                    <th class="td-center th-doubleheader">Retail</th>
+                </tr>
+                <tr>
+                    <td class="td-nowrap">Passage</td>
+                    <td class="td-center">
+                        <label id="p_qty_l1_o4">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_mgn_l1_o4">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_list_l1_o4">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_discount_l1_o4">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_net_l1_o4">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_retail_l1_o4">-</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td-nowrap">Dummy</td>
+                    <td class="td-center">
+                        <label id="p_qty_l2_o4">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_mgn_l2_o4">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_list_l2_o4">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_discount_l2_o4">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_net_l2_o4">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_retail_l2_o4">-</label>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="td-nowrap">Privacy</td>
+                    <td class="td-center">
+                        <label id="p_qty_l3_o4">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_mgn_l3_o4">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_list_l3_o4">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_discount_l3_o4">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_net_l3_o4">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_retail_l3_o4">-</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td-nowrap">Keyed</td>
+                    <td class="td-center">
+                        <label id="p_qty_l4_o4">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_mgn_l4_o4">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_list_l4_o4">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_discount_l4_o4">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_net_l4_o4">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_retail_l4_o4">-</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td-nowrap">Entry</td>
+                    <td class="td-center">
+                        <label id="p_qty_l5_o4">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_mgn_l5_o4">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_list_l5_o4">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_discount_l5_o4">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_net_l5_o4">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_retail_l5_o4">-</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td-nowrap">Deadbolt</td>
+                    <td class="td-center">
+                        <label id="p_qty_l6_o4">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_mgn_l6_o4">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_list_l6_o4">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_discount_l6_o4">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_net_l6_o4">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_retail_l6_o4">-</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td-nowrap">Electronic Lock</td>
+                    <td class="td-center">
+                        <label id="p_qty_l7_o4">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_mgn_l7_o4">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_list_l7_o4">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_discount_l7_o4">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_net_l7_o4">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_retail_l7_o4">-</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td-nowrap">Electronic Deadbolt</td>
+                    <td class="td-center">
+                        <label id="p_qty_l8_o4">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_mgn_l8_o4">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_list_l8_o4">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_discount_l8_o4">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_net_l8_o4">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_retail_l8_o4">-</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td-nowrap">Other</td>
+                    <td class="td-center">
+                        <label id="p_qty_l9_o4">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_mgn_l9_o4">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_list_l9_o4">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_discount_l9_o4">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_net_l9_o4">-</label>
+                    </td>
+                    <td class="td-center">
+                        <label id="p_retail_l9_o4">-</label>
+                    </td>
+                </tr>
+                <tr class="td-metaheader">
+                    <td colspan="7" class="td-center">
+                        <label>Option 4 Total</label>
+                    </td>
+                </tr>
+                <tr class="td-metaheader">
+                    <td colspan="2" class="td-center">Overall Margin</td>
+                    <td class="td-center ">
+                        <label id="p_totMargin_o4">-</label>
+                    </td>
+                    <td class="td-center success">Total Cost</td>
+                    <td class="td-center">
+                        <label id="p_totCost_o4">-</label>
+                    </td>
+                    <td class="td-center success">Total Retail</td>
+                    <td class="td-center">
+                        <label id="p_totRetail_o4">-</label>
+                    </td>
                 </tr>
             </tbody>
         </table>
@@ -1070,7 +1800,7 @@
             $("#option3").hide();
             $("#option4").hide();
             $("#removeButton").hide();
-            $("#printDiv").hide();
+            //$("#printDiv").hide();
 
             loadData();
             calculateAll();
