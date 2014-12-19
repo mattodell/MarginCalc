@@ -594,11 +594,9 @@ function printTable() {
     Popup(data);
 }
 
-<<<<<<< HEAD
+
 //Method to populate the print table structure from the entered options and calculations.
-=======
-//Method to popoulate the print table structure from the entered options and calculations.
->>>>>>> odell
+
 function PopulatePrintTable() {
 
     for (i = 1; i <= optionnum; i++) {
