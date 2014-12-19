@@ -196,6 +196,8 @@ function clearData() {
         $(this).text("(2-tier)");
     });
     $("#discountType").val("(2-tier)");
+
+    calculateAll();
 }
 
 // save the value of the passed input parameter to local storage
@@ -205,7 +207,7 @@ function saveData(fieldID) {
 
 function getMarginMarkup(margin, net) {
     if ($("#marginLabel").text() === "Sales Margin") {
-        return net * (1 + (getFloat(margin) / 100));
+        return net / (1 - (getFloat(margin) / 100));
     } else {
         return (net * (getFloat(margin) / 100)) + net;
     }
