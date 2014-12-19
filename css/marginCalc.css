@@ -2,6 +2,17 @@ body {
     padding-top: 90px;
 }
 
+.navbar-header {
+  float: right;
+}
+.navbar-toggle {
+  display: block;
+}
+
+.navmenu-brand {
+    padding-left: 50px;
+}
+
 .page-title {
     padding-left: 100px;
     margin-left: 100px;
@@ -49,6 +60,19 @@ body {
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
+}
+
+.navmenu-inverse {
+    color: #fff;
+    background-attachment: scroll;
+    background-image: url(/images/schlage_bg.jpg);
+    background-position: center center;
+    background-repeat: none;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    width: 250px;
 }
 
 .td-nowrap {
