@@ -220,8 +220,10 @@ function calculateAll(fieldID) {
         fillAllSalesMargin();
     }*/
 
-    if (fieldID.substring(0,11) === "discount_l1") {
-        fillAllDiscount(fieldID.substring(12));
+    if (fieldID != null) {
+        if (fieldID.substring(0,11) === "discount_l1") {
+            fillAllDiscount(fieldID.substring(12));
+        }
     }
 
     var dm = .50; /* Discount Multiplier */
