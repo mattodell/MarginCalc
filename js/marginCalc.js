@@ -198,6 +198,7 @@ function clearData() {
     $("#discountType").val("(2-tier)");
 
     calculateAll();
+
 }
 
 // save the value of the passed input parameter to local storage
@@ -579,6 +580,10 @@ function fillAllDiscount(optionNum) {
     saveData("discount_l9_" + optionNum);
 }
 
+function openMarginTurnRef() {
+    window.open('margin-turns.html');
+}
+
 // Shows the print table div, collects all the data in a variable,
 //   hides the div and calls the popup function
 function printTable() {
@@ -589,7 +594,11 @@ function printTable() {
     Popup(data);
 }
 
+<<<<<<< HEAD
 //Method to populate the print table structure from the entered options and calculations.
+=======
+//Method to popoulate the print table structure from the entered options and calculations.
+>>>>>>> odell
 function PopulatePrintTable() {
 
     for (i = 1; i <= optionnum; i++) {

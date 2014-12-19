@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
     <link href="css/bootstrap-theme.min.css" rel="stylesheet" media="screen">
-    <link href="css/marginCalc.css" rel="stylesheet" media="screen">
     <link href="css/jasny-bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="css/marginCalc.css" rel="stylesheet" media="screen">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -22,18 +22,43 @@
 <body>
 
     <!-- Navbar -->
-
+    <div class="navmenu navmenu-inverse navmenu-fixed-right offcanvas navmenu-collapse">
+      <img class="navmenu-brand" src="images/schlageLogo.png">
+      <ul class="nav navmenu-nav">
+        <li>
+            <a class="navbar-toggle" data-toggle="offcanvas" data-target=".navmenu" data-canvas="body" id="printButton" href="#" onclick="printTable();">
+                Print A Copy
+            </a>
+        </li>
+        <li>
+            <a class="navbar-toggle" data-toggle="offcanvas" data-target=".navmenu" data-canvas="body" id="excelButton" href="#" onclick="tableToExcel('printTable', 'Option Print')">
+                Download to Excel
+            </a>
+        </li>
+        <li>
+            <a class="navbar-toggle" data-toggle="offcanvas" data-target=".navmenu" data-canvas="body" id="refButton" onclick="openMarginTurnRef();">
+                Margin/Turns Reference
+            </a>
+        </li>
+        <li>
+            <a class="navbar-toggle" data-toggle="offcanvas" data-target=".navmenu" data-canvas="body" id="clearButton" href="#" onclick="clearData();">
+                Clear Form
+            </a>
+        </li>
+      </ul>
+    </div>
 
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
-            <div class="navbar-left td-nowrap">
+            <div class="navbar-left">
                 <a class="navbar-brand title-logo" href="index.html">
                     <img class="title-logo" src="/images/schlageLogo.png" />
                 </a>
 
                 <h3 class="page-title hidden-xs">House of Locks <small class="page-title-small">Margin Calculator</small></h3>
-
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            </div>
+            <div class="navbar-right">
+                <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target=".navmenu" data-canvas="body">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -45,7 +70,7 @@
     <!-- End Navbar -->
 
     <div class="container">
-        <div class="col-sm-3" id="commonInputsTable">
+        <div class="col-md-3" id="commonInputsTable">
             <table class="table table-striped">
                 <tr class="td-metaheader">
                     <td colspan="4">
@@ -142,7 +167,7 @@
             </table>
         </div>
 
-        <div class="col-sm-3" id="option1">
+        <div class="col-md-3" id="option1">
             <table class="table table-striped">
                 <tr>
                     <td class="td-metaheader" colspan="4">
@@ -302,7 +327,7 @@
             </table>
         </div>
 
-        <div class="col-sm-3" id="option2">
+        <div class="col-md-3" id="option2">
             <table class="table table-striped">
                 <tr>
                     <td class="td-metaheader" colspan="4">
@@ -460,7 +485,7 @@
             </table>
         </div>
 
-        <div class="col-sm-3" id="option3">
+        <div class="col-md-3" id="option3">
             <table class="table table-striped">
                 <tr>
                     <td class="td-metaheader" colspan="4">
@@ -618,7 +643,7 @@
             </table>
         </div>
 
-        <div class="col-sm-3" id="option4">
+        <div class="col-md-3" id="option4">
             <table class="table table-striped">
                 <tr>
                     <td class="td-metaheader" colspan="4">
@@ -783,6 +808,7 @@
             <input class="btn btn-sm btn-schlage-darken" type="button" id="addAnotherButton" value="Add Option >>" onclick="addAnotherOption();" />
             <input type="hidden" id="optionCount" value="1" />
         </div>
+<<<<<<< HEAD
         <div class="col-sm-offset-2 col-sm-6">
             <button class="btn btn-sm btn-schlage-darken" type="button" id="clearButton" onclick="clearData();">Clear Form</button>
             <button class="btn btn-sm btn-schlage-darken" type="button" id="printButton" onclick="printTable();">Print</button>
@@ -790,6 +816,8 @@
             <button class="btn btn-sm btn-schlage-darken" type="button" id="excelButton" onclick="tableToExcel('printTable', 'House of Locks')">Download to Excel</button>
             <button class="btn btn-sm btn-schlage-darken" type="button" id="refButton" href="#toDoModal" data-toggle="modal" data-target="#toDoModal">Show Margin Turns Reference</button>
         </div>
+=======
+>>>>>>> odell
     </div>
 
     <!-- Modals -->
