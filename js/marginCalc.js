@@ -127,6 +127,10 @@ function loadData() {
         $(this).val(localStorage.getItem($(this).attr('id')));
     });
 
+    $("input[type=number]").each(function () {
+        $(this).val(localStorage.getItem($(this).attr('id')));
+    });
+
     var option = localStorage.getItem("option1Label")
     if (option != null) {
         if (option != "") {
@@ -184,6 +188,7 @@ function loadData() {
 // clear local storage and reset column and row headers to default values
 function clearData() {
     $("input:text").val("");
+    $("input[type=number]").val("");
     localStorage.clear();
 
     $("#option1Label").text("Option 1");
