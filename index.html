@@ -69,580 +69,589 @@
     <!-- End Navbar -->
 
     <div class="container">
-        <div class="col-md-3" id="commonInputsTable">
-            <table class="table table-striped">
-                <tr class="td-metaheader">
-                    <td colspan="4">
-                        <label id="commonInputs">Common Inputs</label>
-                    </td>
-                </tr>
-                <tr>
-                    <th class="td-nowrap th-doubleheader">Function</th>
-                    <th class="td-center th-doubleheader">Qty</th>
-                    <th class="td-center th-doubleheader"><a id="marginLabel" href="#" title="Click to toggle Sales Margin or Markup" onclick="toggleMarginMarkup();">Sales Margin</a>
-                    </th>
-                </tr>
-                <tr>
-                    <td class="td-nowrap">Passage</td>
-                    <td class="td-center">
-                        <input class="input-number" type="number" id="qty_l1" name="qty_l1" onchange="calculateAll(this.id);" />
-                    </td>
-                    <td class="td-center">
-                        <input class="input-number" type="number" id="mgn_l1" name="mgn_l1" onchange="calculateAll(this.id);" />
-                    </td>
-                </tr>
-                <tr>
-                    <td class="td-nowrap">Dummy</td>
-                    <td class="td-center">
-                        <input class="input-number" type="number" id="qty_l2" name="qty_l2" onchange="calculateAll(this.id);" />
-                    </td>
-                    <td class="td-center">
-                        <input class="input-number" type="number" id="mgn_l2" name="mgn_l2" onchange="calculateAll(this.id);" />
-                    </td>
-                    <tr>
-                        <td class="td-nowrap">Privacy</td>
-                        <td class="td-center">
-                            <input class="input-number" type="number" id="qty_l3" name="qty_l3" onchange="calculateAll(this.id);" />
-                        </td>
-                        <td class="td-center">
-                            <input class="input-number" type="number" id="mgn_l3" name="mgn_l3" onchange="calculateAll(this.id);" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="td-nowrap">Keyed</td>
-                        <td class="td-center">
-                            <input class="input-number" type="number" id="qty_l4" name="qty_l4" onchange="calculateAll(this.id);" />
-                        </td>
-                        <td class="td-center">
-                            <input class="input-number" type="number" id="mgn_l4" name="mgn_l4" onchange="calculateAll(this.id);" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="td-nowrap">Entry</td>
-                        <td class="td-center">
-                            <input class="input-number" type="number" id="qty_l5" name="qty_l5" onchange="calculateAll(this.id);" />
-                        </td>
-                        <td class="td-center">
-                            <input class="input-number" type="number" id="mgn_l5" name="mgn_l5" onchange="calculateAll(this.id);" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="td-nowrap">Deadbolt</td>
-                        <td class="td-center">
-                            <input class="input-number" type="number" id="qty_l6" name="qty_l6" onchange="calculateAll(this.id);" />
-                        </td>
-                        <td class="td-center">
-                            <input class="input-number" type="number" id="mgn_l6" name="mgn_l6" onchange="calculateAll(this.id);" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="td-nowrap">Electronic Lock</td>
-                        <td class="td-center">
-                            <input class="input-number" type="number" id="qty_l7" name="qty_l7" onchange="calculateAll(this.id);" />
-                        </td>
-                        <td class="td-center">
-                            <input class="input-number" type="number" id="mgn_l7" name="mgn_l7" onchange="calculateAll(this.id);" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="td-nowrap">Electronic DeadBolt</td>
-                        <td class="td-center">
-                            <input class="input-number" type="number" id="qty_l8" name="qty_l8" onchange="calculateAll(this.id);" />
-                        </td>
-                        <td class="td-center">
-                            <input class="input-number" type="number" id="mgn_l8" name="mgn_l8" onchange="calculateAll(this.id);" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="td-nowrap"><a id="otherLabel" href="#optionModal" data-toggle="modal" data-target="#optionModal">Other</a>
-                        </td>
-                        <td class="td-center">
-                            <input class="input-number" type="number" id="qty_l9" name="qty_l9" onchange="calculateAll(this.id);" />
-                        </td>
-                        <td class="td-center">
-                            <input class="input-number" type="number" id="mgn_l9" name="mgn_l9" onchange="calculateAll(this.id);" />
-                        </td>
-                    </tr>
-            </table>
+
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col-sm-6" id="commonInputsTable">
+                    <table class="table table-striped">
+                        <tr class="td-metaheader">
+                            <td colspan="4">
+                                <label id="commonInputs">Common Inputs</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="td-nowrap th-doubleheader">Function</th>
+                            <th class="td-center th-doubleheader">Qty</th>
+                            <th class="td-center th-doubleheader"><a id="marginLabel" href="#" title="Click to toggle Sales Margin or Markup" onclick="toggleMarginMarkup();">Sales Margin</a>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td class="td-nowrap">Passage</td>
+                            <td class="td-center">
+                                <input class="input-number" type="number" id="qty_l1" name="qty_l1" onchange="calculateAll(this.id);" />
+                            </td>
+                            <td class="td-center">
+                                <input class="input-number" type="number" id="mgn_l1" name="mgn_l1" onchange="calculateAll(this.id);" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td-nowrap">Dummy</td>
+                            <td class="td-center">
+                                <input class="input-number" type="number" id="qty_l2" name="qty_l2" onchange="calculateAll(this.id);" />
+                            </td>
+                            <td class="td-center">
+                                <input class="input-number" type="number" id="mgn_l2" name="mgn_l2" onchange="calculateAll(this.id);" />
+                            </td>
+                            <tr>
+                                <td class="td-nowrap">Privacy</td>
+                                <td class="td-center">
+                                    <input class="input-number" type="number" id="qty_l3" name="qty_l3" onchange="calculateAll(this.id);" />
+                                </td>
+                                <td class="td-center">
+                                    <input class="input-number" type="number" id="mgn_l3" name="mgn_l3" onchange="calculateAll(this.id);" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td-nowrap">Keyed</td>
+                                <td class="td-center">
+                                    <input class="input-number" type="number" id="qty_l4" name="qty_l4" onchange="calculateAll(this.id);" />
+                                </td>
+                                <td class="td-center">
+                                    <input class="input-number" type="number" id="mgn_l4" name="mgn_l4" onchange="calculateAll(this.id);" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td-nowrap">Entry</td>
+                                <td class="td-center">
+                                    <input class="input-number" type="number" id="qty_l5" name="qty_l5" onchange="calculateAll(this.id);" />
+                                </td>
+                                <td class="td-center">
+                                    <input class="input-number" type="number" id="mgn_l5" name="mgn_l5" onchange="calculateAll(this.id);" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td-nowrap">Deadbolt</td>
+                                <td class="td-center">
+                                    <input class="input-number" type="number" id="qty_l6" name="qty_l6" onchange="calculateAll(this.id);" />
+                                </td>
+                                <td class="td-center">
+                                    <input class="input-number" type="number" id="mgn_l6" name="mgn_l6" onchange="calculateAll(this.id);" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td-nowrap">Electronic Lock</td>
+                                <td class="td-center">
+                                    <input class="input-number" type="number" id="qty_l7" name="qty_l7" onchange="calculateAll(this.id);" />
+                                </td>
+                                <td class="td-center">
+                                    <input class="input-number" type="number" id="mgn_l7" name="mgn_l7" onchange="calculateAll(this.id);" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td-nowrap">Electronic DeadBolt</td>
+                                <td class="td-center">
+                                    <input class="input-number" type="number" id="qty_l8" name="qty_l8" onchange="calculateAll(this.id);" />
+                                </td>
+                                <td class="td-center">
+                                    <input class="input-number" type="number" id="mgn_l8" name="mgn_l8" onchange="calculateAll(this.id);" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td-nowrap"><a id="otherLabel" href="#optionModal" data-toggle="modal" data-target="#optionModal">Other</a>
+                                </td>
+                                <td class="td-center">
+                                    <input class="input-number" type="number" id="qty_l9" name="qty_l9" onchange="calculateAll(this.id);" />
+                                </td>
+                                <td class="td-center">
+                                    <input class="input-number" type="number" id="mgn_l9" name="mgn_l9" onchange="calculateAll(this.id);" />
+                                </td>
+                            </tr>
+                    </table>
+                </div>
+
+                <div class="col-sm-6 option-spacer" id="option1">
+                    <table class="table table-striped">
+                        <tr>
+                            <td class="td-metaheader" colspan="4">
+                                <a id="option1Label" href="#optionModal" data-toggle="modal" data-target="#optionModal">Option 1</a>
+                                <input type="hidden" id="selectedOption" />
+                                <input type="hidden" id="discountType" value="(2-tier)" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="td-center th-doubleheader">List</th>
+                            <th class="td-center th-doubleheader">Discount<br><a href="#" class="discountType" onclick="toggleDiscountType();">(2-tier)</a></th>
+                            <th class="td-center th-doubleheader">Net</th>
+                            <th class="td-center th-doubleheader">Sale Price</th>
+                        </tr>
+                        <tr>
+                            <td class="td-center">
+                                <input class="input-number" type="number" id="list_l1_o1" onchange="calculateAll(this.id);" />
+                            </td>
+                            <td class="td-center">
+                                <input class="input-number" type="number" id="discount_l1_o1" onchange="calculateAll(this.id);" />
+                            </td>
+                            <td class="td-center">
+                                <label id="net_l1_o1">-</label>
+                            </td>
+                            <td class="td-center">
+                                <label id="retail_l1_o1">-</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td-center">
+                                <input class="input-number" type="number" id="list_l2_o1" onchange="calculateAll(this.id);" />
+                            </td>
+                            <td class="td-center">
+                                <input class="input-number" type="number" id="discount_l2_o1" onchange="calculateAll(this.id);" />
+                            </td>
+                            <td class="td-center">
+                                <label id="net_l2_o1">-</label>
+                            </td>
+                            <td class="td-center">
+                                <label id="retail_l2_o1">-</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td-center">
+                                <input class="input-number" type="number" id="list_l3_o1" onchange="calculateAll(this.id);" />
+                            </td>
+                            <td class="td-center">
+                                <input class="input-number" type="number" id="discount_l3_o1" onchange="calculateAll(this.id);" />
+                            </td>
+                            <td class="td-center">
+                                <label id="net_l3_o1">-</label>
+                            </td>
+                            <td class="td-center">
+                                <label id="retail_l3_o1">-</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td-center">
+                                <input class="input-number" type="number" id="list_l4_o1" onchange="calculateAll(this.id);" />
+                            </td>
+                            <td class="td-center">
+                                <input class="input-number" type="number" id="discount_l4_o1" onchange="calculateAll(this.id);" />
+                            </td>
+                            <td class="td-center">
+                                <label id="net_l4_o1">-</label>
+                            </td>
+                            <td class="td-center">
+                                <label id="retail_l4_o1">-</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td-center">
+                                <input class="input-number" type="number" id="list_l5_o1" onchange="calculateAll(this.id);" />
+                            </td>
+                            <td class="td-center">
+                                <input class="input-number" type="number" id="discount_l5_o1" onchange="calculateAll(this.id);" />
+                            </td>
+                            <td class="td-center">
+                                <label id="net_l5_o1">-</label>
+                            </td>
+                            <td class="td-center">
+                                <label id="retail_l5_o1">-</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td-center">
+                                <input class="input-number" type="number" id="list_l6_o1" onchange="calculateAll(this.id);" />
+                            </td>
+                            <td class="td-center">
+                                <input class="input-number" type="number" id="discount_l6_o1" onchange="calculateAll(this.id);" />
+                            </td>
+                            <td class="td-center">
+                                <label id="net_l6_o1">-</label>
+                            </td>
+                            <td class="td-center">
+                                <label id="retail_l6_o1">-</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td-center">
+                                <input class="input-number" type="number" id="list_l7_o1" onchange="calculateAll(this.id);" />
+                            </td>
+                            <td class="td-center">
+                                <input class="input-number" type="number" id="discount_l7_o1" onchange="calculateAll(this.id);" />
+                            </td>
+                            <td class="td-center">
+                                <label id="net_l7_o1">-</label>
+                            </td>
+                            <td class="td-center">
+                                <label id="retail_l7_o1">-</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td-center">
+                                <input class="input-number" type="number" id="list_l8_o1" onchange="calculateAll(this.id);" />
+                            </td>
+                            <td class="td-center">
+                                <input class="input-number" type="number" id="discount_l8_o1" onchange="calculateAll(this.id);" />
+                            </td>
+                            <td class="td-center">
+                                <label id="net_l8_o1">-</label>
+                            </td>
+                            <td class="td-center">
+                                <label id="retail_l8_o1">-</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td-center">
+                                <input class="input-number" type="number" id="list_l9_o1" onchange="calculateAll(this.id);" />
+                            </td>
+                            <td class="td-center">
+                                <input class="input-number" type="number" id="discount_l9_o1" onchange="calculateAll(this.id);" />
+                            </td>
+                            <td class="td-center">
+                                <label id="net_l9_o1">-</label>
+                            </td>
+                            <td class="td-center">
+                                <label id="retail_l9_o1">-</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="td-center th-doubleheader">Total Cost</th>
+                            <th class="td-center th-doubleheader">Total Sale Price</th>
+                            <th class="td-center th-doubleheader" colspan="2">Overall Margin</th>
+                        </tr>
+                        <tr>
+                            <td class="td-center">
+                                <label id="totCost_o1">-</label>
+                            </td>
+                            <td class="td-center">
+                                <label id="totRetail_o1">-</label>
+                            </td>
+                            <td class="td-center" colspan="2">
+                                <label id="totMargin_o1">-</label>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
         </div>
 
-        <div class="col-md-3" id="option1">
-            <table class="table table-striped">
-                <tr>
-                    <td class="td-metaheader" colspan="4">
-                        <a id="option1Label" href="#optionModal" data-toggle="modal" data-target="#optionModal">Option 1</a>
-                        <input type="hidden" id="selectedOption" />
-                        <input type="hidden" id="discountType" value="(2-tier)" />
-                    </td>
-                </tr>
-                <tr>
-                    <th class="td-center th-doubleheader">List</th>
-                    <th class="td-center th-doubleheader">Discount<br><a href="#" class="discountType" onclick="toggleDiscountType();">(2-tier)</a></th>
-                    <th class="td-center th-doubleheader">Net</th>
-                    <th class="td-center th-doubleheader">Sale Price</th>
-                </tr>
-                <tr>
-                    <td class="td-center">
-                        <input class="input-number" type="number" id="list_l1_o1" onchange="calculateAll(this.id);" />
-                    </td>
-                    <td class="td-center">
-                        <input class="input-number" type="number" id="discount_l1_o1" onchange="calculateAll(this.id);" />
-                    </td>
-                    <td class="td-center">
-                        <label id="net_l1_o1">-</label>
-                    </td>
-                    <td class="td-center">
-                        <label id="retail_l1_o1">-</label>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="td-center">
-                        <input class="input-number" type="number" id="list_l2_o1" onchange="calculateAll(this.id);" />
-                    </td>
-                    <td class="td-center">
-                        <input class="input-number" type="number" id="discount_l2_o1" onchange="calculateAll(this.id);" />
-                    </td>
-                    <td class="td-center">
-                        <label id="net_l2_o1">-</label>
-                    </td>
-                    <td class="td-center">
-                        <label id="retail_l2_o1">-</label>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="td-center">
-                        <input class="input-number" type="number" id="list_l3_o1" onchange="calculateAll(this.id);" />
-                    </td>
-                    <td class="td-center">
-                        <input class="input-number" type="number" id="discount_l3_o1" onchange="calculateAll(this.id);" />
-                    </td>
-                    <td class="td-center">
-                        <label id="net_l3_o1">-</label>
-                    </td>
-                    <td class="td-center">
-                        <label id="retail_l3_o1">-</label>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="td-center">
-                        <input class="input-number" type="number" id="list_l4_o1" onchange="calculateAll(this.id);" />
-                    </td>
-                    <td class="td-center">
-                        <input class="input-number" type="number" id="discount_l4_o1" onchange="calculateAll(this.id);" />
-                    </td>
-                    <td class="td-center">
-                        <label id="net_l4_o1">-</label>
-                    </td>
-                    <td class="td-center">
-                        <label id="retail_l4_o1">-</label>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="td-center">
-                        <input class="input-number" type="number" id="list_l5_o1" onchange="calculateAll(this.id);" />
-                    </td>
-                    <td class="td-center">
-                        <input class="input-number" type="number" id="discount_l5_o1" onchange="calculateAll(this.id);" />
-                    </td>
-                    <td class="td-center">
-                        <label id="net_l5_o1">-</label>
-                    </td>
-                    <td class="td-center">
-                        <label id="retail_l5_o1">-</label>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="td-center">
-                        <input class="input-number" type="number" id="list_l6_o1" onchange="calculateAll(this.id);" />
-                    </td>
-                    <td class="td-center">
-                        <input class="input-number" type="number" id="discount_l6_o1" onchange="calculateAll(this.id);" />
-                    </td>
-                    <td class="td-center">
-                        <label id="net_l6_o1">-</label>
-                    </td>
-                    <td class="td-center">
-                        <label id="retail_l6_o1">-</label>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="td-center">
-                        <input class="input-number" type="number" id="list_l7_o1" onchange="calculateAll(this.id);" />
-                    </td>
-                    <td class="td-center">
-                        <input class="input-number" type="number" id="discount_l7_o1" onchange="calculateAll(this.id);" />
-                    </td>
-                    <td class="td-center">
-                        <label id="net_l7_o1">-</label>
-                    </td>
-                    <td class="td-center">
-                        <label id="retail_l7_o1">-</label>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="td-center">
-                        <input class="input-number" type="number" id="list_l8_o1" onchange="calculateAll(this.id);" />
-                    </td>
-                    <td class="td-center">
-                        <input class="input-number" type="number" id="discount_l8_o1" onchange="calculateAll(this.id);" />
-                    </td>
-                    <td class="td-center">
-                        <label id="net_l8_o1">-</label>
-                    </td>
-                    <td class="td-center">
-                        <label id="retail_l8_o1">-</label>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="td-center">
-                        <input class="input-number" type="number" id="list_l9_o1" onchange="calculateAll(this.id);" />
-                    </td>
-                    <td class="td-center">
-                        <input class="input-number" type="number" id="discount_l9_o1" onchange="calculateAll(this.id);" />
-                    </td>
-                    <td class="td-center">
-                        <label id="net_l9_o1">-</label>
-                    </td>
-                    <td class="td-center">
-                        <label id="retail_l9_o1">-</label>
-                    </td>
-                </tr>
-                <tr>
-                    <th class="td-center th-doubleheader">Total Cost</th>
-                    <th class="td-center th-doubleheader">Total Sale Price</th>
-                    <th class="td-center th-doubleheader" colspan="2">Overall Margin</th>
-                </tr>
-                <tr>
-                    <td class="td-center">
-                        <label id="totCost_o1">-</label>
-                    </td>
-                    <td class="td-center">
-                        <label id="totRetail_o1">-</label>
-                    </td>
-                    <td class="td-center" colspan="2">
-                        <label id="totMargin_o1">-</label>
-                    </td>
-                </tr>
-            </table>
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col-sm-6 option-spacer" id="option2">
+                        <table class="table table-striped">
+                            <tr>
+                                <td class="td-metaheader" colspan="4">
+                                    <a id="option2Label" href="#optionModal" data-toggle="modal" data-target="#optionModal">Option 2</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th class="td-center th-doubleheader">List</th>
+                                <th class="td-center th-doubleheader">Discount<br><a href="#" class="discountType" onclick="toggleDiscountType();">(2-tier)</a></th>
+                                <th class="td-center th-doubleheader">Net</th>
+                                <th class="td-center th-doubleheader">Sale Price</th>
+                            </tr>
+                            <tr>
+                                <td class="td-center">
+                                    <input class="input-number" type="number" id="list_l1_o2" onchange="calculateAll(this.id);" />
+                                </td>
+                                <td class="td-center">
+                                    <input class="input-number" type="number" id="discount_l1_o2" onchange="calculateAll(this.id);" />
+                                </td>
+                                <td class="td-center">
+                                    <label id="net_l1_o2">-</label>
+                                </td>
+                                <td class="td-center">
+                                    <label id="retail_l1_o2">-</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td-center">
+                                    <input class="input-number" type="number" id="list_l2_o2" onchange="calculateAll(this.id);" />
+                                </td>
+                                <td class="td-center">
+                                    <input class="input-number" type="number" id="discount_l2_o2" onchange="calculateAll(this.id);" />
+                                </td>
+                                <td class="td-center">
+                                    <label id="net_l2_o2">-</label>
+                                </td>
+                                <td class="td-center">
+                                    <label id="retail_l2_o2">-</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td-center">
+                                    <input class="input-number" type="number" id="list_l3_o2" onchange="calculateAll(this.id);" />
+                                </td>
+                                <td class="td-center">
+                                    <input class="input-number" type="number" id="discount_l3_o2" onchange="calculateAll(this.id);" />
+                                </td>
+                                <td class="td-center">
+                                    <label id="net_l3_o2">-</label>
+                                </td>
+                                <td class="td-center">
+                                    <label id="retail_l3_o2">-</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td-center">
+                                    <input class="input-number" type="number" id="list_l4_o2" onchange="calculateAll(this.id);" />
+                                </td>
+                                <td class="td-center">
+                                    <input class="input-number" type="number" id="discount_l4_o2" onchange="calculateAll(this.id);" />
+                                </td>
+                                <td class="td-center">
+                                    <label id="net_l4_o2">-</label>
+                                </td>
+                                <td class="td-center">
+                                    <label id="retail_l4_o2">-</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td-center">
+                                    <input class="input-number" type="number" id="list_l5_o2" onchange="calculateAll(this.id);" />
+                                </td>
+                                <td class="td-center">
+                                    <input class="input-number" type="number" id="discount_l5_o2" onchange="calculateAll(this.id);" />
+                                </td>
+                                <td class="td-center">
+                                    <label id="net_l5_o2">-</label>
+                                </td>
+                                <td class="td-center">
+                                    <label id="retail_l5_o2">-</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td-center">
+                                    <input class="input-number" type="number" id="list_l6_o2" onchange="calculateAll(this.id);" />
+                                </td>
+                                <td class="td-center">
+                                    <input class="input-number" type="number" id="discount_l6_o2" onchange="calculateAll(this.id);" />
+                                </td>
+                                <td class="td-center">
+                                    <label id="net_l6_o2">-</label>
+                                </td>
+                                <td class="td-center">
+                                    <label id="retail_l6_o2">-</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td-center">
+                                    <input class="input-number" type="number" id="list_l7_o2" onchange="calculateAll(this.id);" />
+                                </td>
+                                <td class="td-center">
+                                    <input class="input-number" type="number" id="discount_l7_o2" onchange="calculateAll(this.id);" />
+                                </td>
+                                <td class="td-center">
+                                    <label id="net_l7_o2">-</label>
+                                </td>
+                                <td class="td-center">
+                                    <label id="retail_l7_o2">-</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td-center">
+                                    <input class="input-number" type="number" id="list_l8_o2" onchange="calculateAll(this.id);" />
+                                </td>
+                                <td class="td-center">
+                                    <input class="input-number" type="number" id="discount_l8_o2" onchange="calculateAll(this.id);" />
+                                </td>
+                                <td class="td-center">
+                                    <label id="net_l8_o2">-</label>
+                                </td>
+                                <td class="td-center">
+                                    <label id="retail_l8_o2">-</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td-center">
+                                    <input class="input-number" type="number" id="list_l9_o2" onchange="calculateAll(this.id);" />
+                                </td>
+                                <td class="td-center">
+                                    <input class="input-number" type="number" id="discount_l9_o2" onchange="calculateAll(this.id);" />
+                                </td>
+                                <td class="td-center">
+                                    <label id="net_l9_o2">-</label>
+                                </td>
+                                <td class="td-center">
+                                    <label id="retail_l9_o2">-</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th class="td-center th-doubleheader">Total Cost</th>
+                                <th class="td-center th-doubleheader">Total Sale Price</th>
+                                <th class="td-center th-doubleheader" colspan="2">Overall Margin</th>
+                            </tr>
+                            <tr>
+                                <td class="td-center">
+                                    <label id="totCost_o2">-</label>
+                                </td>
+                                <td class="td-center">
+                                    <label id="totRetail_o2">-</label>
+                                </td>
+                                <td class="td-center" colspan="2">
+                                    <label id="totMargin_o2">-</label>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                <div class="col-sm-6 option-spacer" id="option3">
+                    <table class="table table-striped">
+                        <tr>
+                            <td class="td-metaheader" colspan="4">
+                                <a id="option3Label" href="#optionModal" data-toggle="modal" data-target="#optionModal">Option 3</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="td-center th-doubleheader">List</th>
+                            <th class="td-center th-doubleheader">Discount<br><a href="#" class="discountType" onclick="toggleDiscountType();">(2-tier)</a></th>
+                            <th class="td-center th-doubleheader">Net</th>
+                            <th class="td-center th-doubleheader">Sale Price</th>
+                        </tr>
+                        <tr>
+                            <td class="td-center">
+                                <input class="input-number" type="number" id="list_l1_o3" onchange="calculateAll(this.id);" />
+                            </td>
+                            <td class="td-center">
+                                <input class="input-number" type="number" id="discount_l1_o3" onchange="calculateAll(this.id);" />
+                            </td>
+                            <td class="td-center">
+                                <label id="net_l1_o3">-</label>
+                            </td>
+                            <td class="td-center">
+                                <label id="retail_l1_o3">-</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td-center">
+                                <input class="input-number" type="number" id="list_l2_o3" onchange="calculateAll(this.id);" />
+                            </td>
+                            <td class="td-center">
+                                <input class="input-number" type="number" id="discount_l2_o3" onchange="calculateAll(this.id);" />
+                            </td>
+                            <td class="td-center">
+                                <label id="net_l2_o3">-</label>
+                            </td>
+                            <td class="td-center">
+                                <label id="retail_l2_o3">-</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td-center">
+                                <input class="input-number" type="number" id="list_l3_o3" onchange="calculateAll(this.id);" />
+                            </td>
+                            <td class="td-center">
+                                <input class="input-number" type="number" id="discount_l3_o3" onchange="calculateAll(this.id);" />
+                            </td>
+                            <td class="td-center">
+                                <label id="net_l3_o3">-</label>
+                            </td>
+                            <td class="td-center">
+                                <label id="retail_l3_o3">-</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td-center">
+                                <input class="input-number" type="number" id="list_l4_o3" onchange="calculateAll(this.id);" />
+                            </td>
+                            <td class="td-center">
+                                <input class="input-number" type="number" id="discount_l4_o3" onchange="calculateAll(this.id);" />
+                            </td>
+                            <td class="td-center">
+                                <label id="net_l4_o3">-</label>
+                            </td>
+                            <td class="td-center">
+                                <label id="retail_l4_o3">-</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td-center">
+                                <input class="input-number" type="number" id="list_l5_o3" onchange="calculateAll(this.id);" />
+                            </td>
+                            <td class="td-center">
+                                <input class="input-number" type="number" id="discount_l5_o3" onchange="calculateAll(this.id);" />
+                            </td>
+                            <td class="td-center">
+                                <label id="net_l5_o3">-</label>
+                            </td>
+                            <td class="td-center">
+                                <label id="retail_l5_o3">-</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td-center">
+                                <input class="input-number" type="number" id="list_l6_o3" onchange="calculateAll(this.id);" />
+                            </td>
+                            <td class="td-center">
+                                <input class="input-number" type="number" id="discount_l6_o3" onchange="calculateAll(this.id);" />
+                            </td>
+                            <td class="td-center">
+                                <label id="net_l6_o3">-</label>
+                            </td>
+                            <td class="td-center">
+                                <label id="retail_l6_o3">-</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td-center">
+                                <input class="input-number" type="number" id="list_l7_o3" onchange="calculateAll(this.id);" />
+                            </td>
+                            <td class="td-center">
+                                <input class="input-number" type="number" id="discount_l7_o3" onchange="calculateAll(this.id);" />
+                            </td>
+                            <td class="td-center">
+                                <label id="net_l7_o3">-</label>
+                            </td>
+                            <td class="td-center">
+                                <label id="retail_l7_o3">-</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td-center">
+                                <input class="input-number" type="number" id="list_l8_o3" onchange="calculateAll(this.id);" />
+                            </td>
+                            <td class="td-center">
+                                <input class="input-number" type="number" id="discount_l8_o3" onchange="calculateAll(this.id);" />
+                            </td>
+                            <td class="td-center">
+                                <label id="net_l8_o3">-</label>
+                            </td>
+                            <td class="td-center">
+                                <label id="retail_l8_o3">-</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td-center">
+                                <input class="input-number" type="number" id="list_l9_o3" onchange="calculateAll(this.id);" />
+                            </td>
+                            <td class="td-center">
+                                <input class="input-number" type="number" id="discount_l9_o3" onchange="calculateAll(this.id);" />
+                            </td>
+                            <td class="td-center">
+                                <label id="net_l9_o3">-</label>
+                            </td>
+                            <td class="td-center">
+                                <label id="retail_l9_o3">-</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="td-center th-doubleheader">Total Cost</th>
+                            <th class="td-center th-doubleheader">Total Sale Price</th>
+                            <th class="td-center th-doubleheader" colspan="2">Overall Margin</th>
+                        </tr>
+                        <tr>
+                            <td class="td-center">
+                                <label id="totCost_o3">-</label>
+                            </td>
+                            <td class="td-center">
+                                <label id="totRetail_o3">-</label>
+                            </td>
+                            <td class="td-center" colspan="2">
+                                <label id="totMargin_o3">-</label>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
         </div>
 
-        <div class="col-md-3" id="option2">
-            <table class="table table-striped">
-                <tr>
-                    <td class="td-metaheader" colspan="4">
-                        <a id="option2Label" href="#optionModal" data-toggle="modal" data-target="#optionModal">Option 2</a>
-                    </td>
-                </tr>
-                <tr>
-                    <th class="td-center th-doubleheader">List</th>
-                    <th class="td-center th-doubleheader">Discount<br><a href="#" class="discountType" onclick="toggleDiscountType();">(2-tier)</a></th>
-                    <th class="td-center th-doubleheader">Net</th>
-                    <th class="td-center th-doubleheader">Sale Price</th>
-                </tr>
-                <tr>
-                    <td class="td-center">
-                        <input class="input-number" type="number" id="list_l1_o2" onchange="calculateAll(this.id);" />
-                    </td>
-                    <td class="td-center">
-                        <input class="input-number" type="number" id="discount_l1_o2" onchange="calculateAll(this.id);" />
-                    </td>
-                    <td class="td-center">
-                        <label id="net_l1_o2">-</label>
-                    </td>
-                    <td class="td-center">
-                        <label id="retail_l1_o2">-</label>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="td-center">
-                        <input class="input-number" type="number" id="list_l2_o2" onchange="calculateAll(this.id);" />
-                    </td>
-                    <td class="td-center">
-                        <input class="input-number" type="number" id="discount_l2_o2" onchange="calculateAll(this.id);" />
-                    </td>
-                    <td class="td-center">
-                        <label id="net_l2_o2">-</label>
-                    </td>
-                    <td class="td-center">
-                        <label id="retail_l2_o2">-</label>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="td-center">
-                        <input class="input-number" type="number" id="list_l3_o2" onchange="calculateAll(this.id);" />
-                    </td>
-                    <td class="td-center">
-                        <input class="input-number" type="number" id="discount_l3_o2" onchange="calculateAll(this.id);" />
-                    </td>
-                    <td class="td-center">
-                        <label id="net_l3_o2">-</label>
-                    </td>
-                    <td class="td-center">
-                        <label id="retail_l3_o2">-</label>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="td-center">
-                        <input class="input-number" type="number" id="list_l4_o2" onchange="calculateAll(this.id);" />
-                    </td>
-                    <td class="td-center">
-                        <input class="input-number" type="number" id="discount_l4_o2" onchange="calculateAll(this.id);" />
-                    </td>
-                    <td class="td-center">
-                        <label id="net_l4_o2">-</label>
-                    </td>
-                    <td class="td-center">
-                        <label id="retail_l4_o2">-</label>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="td-center">
-                        <input class="input-number" type="number" id="list_l5_o2" onchange="calculateAll(this.id);" />
-                    </td>
-                    <td class="td-center">
-                        <input class="input-number" type="number" id="discount_l5_o2" onchange="calculateAll(this.id);" />
-                    </td>
-                    <td class="td-center">
-                        <label id="net_l5_o2">-</label>
-                    </td>
-                    <td class="td-center">
-                        <label id="retail_l5_o2">-</label>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="td-center">
-                        <input class="input-number" type="number" id="list_l6_o2" onchange="calculateAll(this.id);" />
-                    </td>
-                    <td class="td-center">
-                        <input class="input-number" type="number" id="discount_l6_o2" onchange="calculateAll(this.id);" />
-                    </td>
-                    <td class="td-center">
-                        <label id="net_l6_o2">-</label>
-                    </td>
-                    <td class="td-center">
-                        <label id="retail_l6_o2">-</label>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="td-center">
-                        <input class="input-number" type="number" id="list_l7_o2" onchange="calculateAll(this.id);" />
-                    </td>
-                    <td class="td-center">
-                        <input class="input-number" type="number" id="discount_l7_o2" onchange="calculateAll(this.id);" />
-                    </td>
-                    <td class="td-center">
-                        <label id="net_l7_o2">-</label>
-                    </td>
-                    <td class="td-center">
-                        <label id="retail_l7_o2">-</label>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="td-center">
-                        <input class="input-number" type="number" id="list_l8_o2" onchange="calculateAll(this.id);" />
-                    </td>
-                    <td class="td-center">
-                        <input class="input-number" type="number" id="discount_l8_o2" onchange="calculateAll(this.id);" />
-                    </td>
-                    <td class="td-center">
-                        <label id="net_l8_o2">-</label>
-                    </td>
-                    <td class="td-center">
-                        <label id="retail_l8_o2">-</label>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="td-center">
-                        <input class="input-number" type="number" id="list_l9_o2" onchange="calculateAll(this.id);" />
-                    </td>
-                    <td class="td-center">
-                        <input class="input-number" type="number" id="discount_l9_o2" onchange="calculateAll(this.id);" />
-                    </td>
-                    <td class="td-center">
-                        <label id="net_l9_o2">-</label>
-                    </td>
-                    <td class="td-center">
-                        <label id="retail_l9_o2">-</label>
-                    </td>
-                </tr>
-                <tr>
-                    <th class="td-center th-doubleheader">Total Cost</th>
-                    <th class="td-center th-doubleheader">Total Sale Price</th>
-                    <th class="td-center th-doubleheader" colspan="2">Overall Margin</th>
-                </tr>
-                <tr>
-                    <td class="td-center">
-                        <label id="totCost_o2">-</label>
-                    </td>
-                    <td class="td-center">
-                        <label id="totRetail_o2">-</label>
-                    </td>
-                    <td class="td-center" colspan="2">
-                        <label id="totMargin_o2">-</label>
-                    </td>
-                </tr>
-            </table>
-        </div>
-
-        <div class="col-md-3" id="option3">
-            <table class="table table-striped">
-                <tr>
-                    <td class="td-metaheader" colspan="4">
-                        <a id="option3Label" href="#optionModal" data-toggle="modal" data-target="#optionModal">Option 3</a>
-                    </td>
-                </tr>
-                <tr>
-                    <th class="td-center th-doubleheader">List</th>
-                    <th class="td-center th-doubleheader">Discount<br><a href="#" class="discountType" onclick="toggleDiscountType();">(2-tier)</a></th>
-                    <th class="td-center th-doubleheader">Net</th>
-                    <th class="td-center th-doubleheader">Sale Price</th>
-                </tr>
-                <tr>
-                    <td class="td-center">
-                        <input class="input-number" type="number" id="list_l1_o3" onchange="calculateAll(this.id);" />
-                    </td>
-                    <td class="td-center">
-                        <input class="input-number" type="number" id="discount_l1_o3" onchange="calculateAll(this.id);" />
-                    </td>
-                    <td class="td-center">
-                        <label id="net_l1_o3">-</label>
-                    </td>
-                    <td class="td-center">
-                        <label id="retail_l1_o3">-</label>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="td-center">
-                        <input class="input-number" type="number" id="list_l2_o3" onchange="calculateAll(this.id);" />
-                    </td>
-                    <td class="td-center">
-                        <input class="input-number" type="number" id="discount_l2_o3" onchange="calculateAll(this.id);" />
-                    </td>
-                    <td class="td-center">
-                        <label id="net_l2_o3">-</label>
-                    </td>
-                    <td class="td-center">
-                        <label id="retail_l2_o3">-</label>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="td-center">
-                        <input class="input-number" type="number" id="list_l3_o3" onchange="calculateAll(this.id);" />
-                    </td>
-                    <td class="td-center">
-                        <input class="input-number" type="number" id="discount_l3_o3" onchange="calculateAll(this.id);" />
-                    </td>
-                    <td class="td-center">
-                        <label id="net_l3_o3">-</label>
-                    </td>
-                    <td class="td-center">
-                        <label id="retail_l3_o3">-</label>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="td-center">
-                        <input class="input-number" type="number" id="list_l4_o3" onchange="calculateAll(this.id);" />
-                    </td>
-                    <td class="td-center">
-                        <input class="input-number" type="number" id="discount_l4_o3" onchange="calculateAll(this.id);" />
-                    </td>
-                    <td class="td-center">
-                        <label id="net_l4_o3">-</label>
-                    </td>
-                    <td class="td-center">
-                        <label id="retail_l4_o3">-</label>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="td-center">
-                        <input class="input-number" type="number" id="list_l5_o3" onchange="calculateAll(this.id);" />
-                    </td>
-                    <td class="td-center">
-                        <input class="input-number" type="number" id="discount_l5_o3" onchange="calculateAll(this.id);" />
-                    </td>
-                    <td class="td-center">
-                        <label id="net_l5_o3">-</label>
-                    </td>
-                    <td class="td-center">
-                        <label id="retail_l5_o3">-</label>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="td-center">
-                        <input class="input-number" type="number" id="list_l6_o3" onchange="calculateAll(this.id);" />
-                    </td>
-                    <td class="td-center">
-                        <input class="input-number" type="number" id="discount_l6_o3" onchange="calculateAll(this.id);" />
-                    </td>
-                    <td class="td-center">
-                        <label id="net_l6_o3">-</label>
-                    </td>
-                    <td class="td-center">
-                        <label id="retail_l6_o3">-</label>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="td-center">
-                        <input class="input-number" type="number" id="list_l7_o3" onchange="calculateAll(this.id);" />
-                    </td>
-                    <td class="td-center">
-                        <input class="input-number" type="number" id="discount_l7_o3" onchange="calculateAll(this.id);" />
-                    </td>
-                    <td class="td-center">
-                        <label id="net_l7_o3">-</label>
-                    </td>
-                    <td class="td-center">
-                        <label id="retail_l7_o3">-</label>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="td-center">
-                        <input class="input-number" type="number" id="list_l8_o3" onchange="calculateAll(this.id);" />
-                    </td>
-                    <td class="td-center">
-                        <input class="input-number" type="number" id="discount_l8_o3" onchange="calculateAll(this.id);" />
-                    </td>
-                    <td class="td-center">
-                        <label id="net_l8_o3">-</label>
-                    </td>
-                    <td class="td-center">
-                        <label id="retail_l8_o3">-</label>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="td-center">
-                        <input class="input-number" type="number" id="list_l9_o3" onchange="calculateAll(this.id);" />
-                    </td>
-                    <td class="td-center">
-                        <input class="input-number" type="number" id="discount_l9_o3" onchange="calculateAll(this.id);" />
-                    </td>
-                    <td class="td-center">
-                        <label id="net_l9_o3">-</label>
-                    </td>
-                    <td class="td-center">
-                        <label id="retail_l9_o3">-</label>
-                    </td>
-                </tr>
-                <tr>
-                    <th class="td-center th-doubleheader">Total Cost</th>
-                    <th class="td-center th-doubleheader">Total Sale Price</th>
-                    <th class="td-center th-doubleheader" colspan="2">Overall Margin</th>
-                </tr>
-                <tr>
-                    <td class="td-center">
-                        <label id="totCost_o3">-</label>
-                    </td>
-                    <td class="td-center">
-                        <label id="totRetail_o3">-</label>
-                    </td>
-                    <td class="td-center" colspan="2">
-                        <label id="totMargin_o3">-</label>
-                    </td>
-                </tr>
-            </table>
-        </div>
-
-        <div class="col-md-3" id="option4">
+        <div class="col-sm-3 option-spacer" id="option4">
             <table class="table table-striped">
                 <tr>
                     <td class="td-metaheader" colspan="4">
