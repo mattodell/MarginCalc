@@ -8,16 +8,16 @@ function addAnotherOption() {
         $("#option2").show(1000);
         $("#optionCount").val("2");
         $("#removeButton").show(1000);
-        optionnum = "2"
+        optionnum = "2";
     } else if (option === "2") {
         $("#option3").show(1000);
         $("#optionCount").val("3");
-        optionnum = "3"
+        optionnum = "3";
     } else if (option === "3") {
         $("#option4").show(1000);
         $("#optionCount").val("4");
         $("#addAnotherButton").hide(1000);
-        optionnum = "4"
+        optionnum = "4";
     }
 }
 
@@ -29,16 +29,16 @@ function removeOption() {
         $("#option2").hide(1000);
         $("#optionCount").val("1");
         $("#removeButton").hide(1000);
-        optionnum = "1"
+        optionnum = "1";
     } else if (option === "3") {
         $("#option3").hide(1000);
         $("#optionCount").val("2");
-        optionnum = "2"
+        optionnum = "2";
     } else if (option === "4") {
         $("#option4").hide(1000);
         $("#optionCount").val("3");
         $("#addAnotherButton").show(1000);
-        optionnum = "3"
+        optionnum = "3";
 
     }
 }
@@ -234,7 +234,7 @@ function calculateAll(fieldID) {
         }
     }
 
-    var dm = .50; /* Discount Multiplier */
+    var dm = 0.50; /* Discount Multiplier */
 
     if ($("#discountType").val() === "(1-tier)") {
         dm = 1;
