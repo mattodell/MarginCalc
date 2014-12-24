@@ -79,10 +79,12 @@ body {
 .td-nowrap {
     white-space: nowrap;
     font-size: 11px;
+    height: 43px;
 }
 
 .td-center {
     text-align: center;
+    height: 43px;
 }
 
 .td-metaheader {
