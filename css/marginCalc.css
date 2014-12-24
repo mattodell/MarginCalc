@@ -150,4 +150,14 @@ body {
     text-align: center
 }
 
+.price-number::-webkit-outer-spin-button,
+.price-number::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.price-number {
+    -moz-appearance:textfield;
+}
+
 
